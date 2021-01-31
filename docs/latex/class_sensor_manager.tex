@@ -1,0 +1,758 @@
+\hypertarget{class_sensor_manager}{}\doxysection{Sensor\+Manager Class Reference}
+\label{class_sensor_manager}\index{SensorManager@{SensorManager}}
+
+
+Class to manage Sensors and perform calculations for the frontend.  
+
+
+
+
+{\ttfamily \#include $<$Sensormanager.\+h$>$}
+
+Inheritance diagram for Sensor\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sensor_manager}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sensor_manager_aa0f7905d4a69e953f9027245facb9ccd}{Sensor\+Manager}} (Q\+Object $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor of the \mbox{\hyperlink{class_sensor_manager}{Sensor\+Manager}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sensor_manager_a91c39b08d99baaa99ee9a9c58647ccdc}{Load\+Data\+From\+Directory\+To\+DB}} (std\+::string path\+To\+Dir)
+\begin{DoxyCompactList}\small\item\em Load all C\+SV in the directory to the DB. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sensor_manager_a65df6e289d4cd985e2b33e2090fc1ed5}{add\+Sensor}} (\mbox{\hyperlink{class_sensor}{Sensor}} s)
+\begin{DoxyCompactList}\small\item\em Add sensor to the sensors collection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sensor_manager_a75935d2376ee6c7043a1b5527e8c10a9}{add\+Record\+To\+Sensor}} (int id, string timestamp, double first\+Value, double second\+Value)
+\begin{DoxyCompactList}\small\item\em Add record to a sensor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_sensor_manager_af8f42ab2714f9d02e339b57fa58e2ddb}\label{class_sensor_manager_af8f42ab2714f9d02e339b57fa58e2ddb}} 
+void \mbox{\hyperlink{class_sensor_manager_af8f42ab2714f9d02e339b57fa58e2ddb}{record\+Datafrom\+Backup}} ()
+\begin{DoxyCompactList}\small\item\em Read backup copies to use instead of the DB. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sensor_manager_a91a07b501590d26eabd27a9e83e9967e}{read\+Backup\+File}} (Q\+String measure)
+\begin{DoxyCompactList}\small\item\em Read specific file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_sensor_manager_af3fee6becb5b2d8a02f35ef531df5763}{get\+Sensor\+Id\+On\+Position}} (double lon, double lat, Q\+String measure)
+\begin{DoxyCompactList}\small\item\em Method to get ID of the sensor on the position. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_manager_af99c678a50b862dde9c5a30d8f367d36}{get\+Last}} (int id, Q\+String measure)
+\begin{DoxyCompactList}\small\item\em Method to get last value of the sensor with the specific id. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_manager_a04601c0172a5c884eb6f5effa8b5cd67}{get\+Average}} (int id, Q\+String time\+From, Q\+String time\+Until, Q\+String measure)
+\begin{DoxyCompactList}\small\item\em Method to get average value of the sensor in the given timeperiod. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_manager_a35fdecaa7398d8b868e419b13153316a}{get\+Last}} (double lon, double lat, Q\+String measure)
+\begin{DoxyCompactList}\small\item\em Method to get last value of the sensor at the specific location. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_manager_ad4ecc6c44c7317f89950548b2868e2fb}{get\+Average}} (double lon, double lat, Q\+String time\+From, Q\+String time\+Until, Q\+String measure)
+\begin{DoxyCompactList}\small\item\em Method to get average value of the sensor in the timeperiod. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sensor_manager_a86f5026f7d373da3f41b30ff13f00b40}{find\+Sensors\+In\+City}} (Q\+String city\+Name, Q\+String measure)
+\begin{DoxyCompactList}\small\item\em Method to find sensors inside the city rectangle and temporarily store them. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE double \mbox{\hyperlink{class_sensor_manager_a3da0b0b4fbd1f8cce393eda98c8660a4}{avg\+City\+Value}} (Q\+String city\+Name, Q\+String measure, Q\+String time\+From, Q\+String time\+Until)
+\begin{DoxyCompactList}\small\item\em Method to get average value in the city during the timeperiod. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+Geo\+Location \mbox{\hyperlink{class_sensor_manager_a21145d2a46ed1c999785fd30ddadd4c0}{get\+Location}} (Q\+String city\+Name)
+\begin{DoxyCompactList}\small\item\em Method to get location of the city. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+Geo\+Rectangle \mbox{\hyperlink{class_sensor_manager_a16638531e55ddde56d52e61abf1bf46c}{get\+City\+Rectangle}} (Q\+String city\+Name)
+\begin{DoxyCompactList}\small\item\em Method to get rectangle that includes the city. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+Geo\+Coordinate \mbox{\hyperlink{class_sensor_manager_a0df802f4c95f457f58a5ce3d490b17d2}{get\+City\+Center}} (Q\+String city\+Name)
+\begin{DoxyCompactList}\small\item\em Method to get coordinates of the point in the city center. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE double \mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{get\+Average\+Polygon\+Value}} (double polyY\mbox{[}6\mbox{]}, double polyX\mbox{[}6\mbox{]}, Q\+String data\+Value)
+\begin{DoxyCompactList}\small\item\em Method to get average temperature or other value of sensors inside a polygon. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sensor_manager_aecd2eecadc9e2e38462b1b72f4498c48}{point\+In\+Polygon}} (double polyY\mbox{[}6\mbox{]}, double polyX\mbox{[}6\mbox{]}, double y, double x)
+\begin{DoxyCompactList}\small\item\em Method to prove if a point is located inside a polygon/hexagon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to manage Sensors and perform calculations for the frontend. 
+
+
+
+Definition at line 18 of file Sensormanager.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sensor_manager_aa0f7905d4a69e953f9027245facb9ccd}\label{class_sensor_manager_aa0f7905d4a69e953f9027245facb9ccd}} 
+\index{SensorManager@{SensorManager}!SensorManager@{SensorManager}}
+\index{SensorManager@{SensorManager}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{SensorManager()}{SensorManager()}}
+{\footnotesize\ttfamily Sensor\+Manager\+::\+Sensor\+Manager (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor of the \mbox{\hyperlink{class_sensor_manager}{Sensor\+Manager}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Is the default Q\+Object parameter that won \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 16 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16                                             : QObject(parent) \{}
+\DoxyCodeLine{17     tmpRectangle = \mbox{\hyperlink{class_sensor_manager_a16638531e55ddde56d52e61abf1bf46c}{getCityRectangle}}(\textcolor{stringliteral}{"Darmstadt"});}
+\DoxyCodeLine{18     qDebug() << \textcolor{stringliteral}{"Start with using backup data..."};}
+\DoxyCodeLine{19     ifstream fin;}
+\DoxyCodeLine{20     \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{21     \textcolor{comment}{// Open an existing file}}
+\DoxyCodeLine{22     fin.open(\textcolor{stringliteral}{"../FineDustMap/Backup/sensorBackup.csv"}, ifstream::in);}
+\DoxyCodeLine{23     \textcolor{keywordflow}{while} (getline(fin, line)) \{}
+\DoxyCodeLine{24         QString l = QString::fromStdString(line);}
+\DoxyCodeLine{25         \mbox{\hyperlink{class_sensor}{Sensor}} s(l.section(\textcolor{stringliteral}{";"}, 0, 0).toInt(), \textcolor{comment}{//Id}}
+\DoxyCodeLine{26                  l.section(\textcolor{stringliteral}{";"}, 1, 1).toStdString(), \textcolor{comment}{//Type}}
+\DoxyCodeLine{27                  l.section(\textcolor{stringliteral}{";"}, 2, 2).toDouble(), \textcolor{comment}{//lat}}
+\DoxyCodeLine{28                  l.section(\textcolor{stringliteral}{";"}, 3, 3).toDouble()); \textcolor{comment}{//lon}}
+\DoxyCodeLine{29         \mbox{\hyperlink{class_sensor_manager_a65df6e289d4cd985e2b33e2090fc1ed5}{addSensor}}(s);}
+\DoxyCodeLine{30     \}}
+\DoxyCodeLine{31     fin.close();}
+\DoxyCodeLine{32     \mbox{\hyperlink{class_sensor_manager_af8f42ab2714f9d02e339b57fa58e2ddb}{recordDatafromBackup}}();}
+\DoxyCodeLine{33     qDebug() << \textcolor{stringliteral}{"Successfull!"};}
+\DoxyCodeLine{34 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sensor_manager_a75935d2376ee6c7043a1b5527e8c10a9}\label{class_sensor_manager_a75935d2376ee6c7043a1b5527e8c10a9}} 
+\index{SensorManager@{SensorManager}!addRecordToSensor@{addRecordToSensor}}
+\index{addRecordToSensor@{addRecordToSensor}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{addRecordToSensor()}{addRecordToSensor()}}
+{\footnotesize\ttfamily void Sensor\+Manager\+::add\+Record\+To\+Sensor (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{string}]{timestamp,  }\item[{double}]{first\+Value,  }\item[{double}]{second\+Value }\end{DoxyParamCaption})}
+
+
+
+Add record to a sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Id of the sensor \\
+\hline
+{\em timestamp} & Date and time of the record. \\
+\hline
+{\em first\+Value} & P1 value of the record. \\
+\hline
+{\em second\+Value} & P2 value of the record. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52                                                                                                     \{}
+\DoxyCodeLine{53     sensors.find(\textcolor{keywordtype}{id})-\/>addRecord(timestamp, firstValue, secondValue);}
+\DoxyCodeLine{54 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_manager_a65df6e289d4cd985e2b33e2090fc1ed5}\label{class_sensor_manager_a65df6e289d4cd985e2b33e2090fc1ed5}} 
+\index{SensorManager@{SensorManager}!addSensor@{addSensor}}
+\index{addSensor@{addSensor}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{addSensor()}{addSensor()}}
+{\footnotesize\ttfamily void Sensor\+Manager\+::add\+Sensor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sensor}{Sensor}}}]{s }\end{DoxyParamCaption})}
+
+
+
+Add sensor to the sensors collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \mbox{\hyperlink{class_sensor}{Sensor}} to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48                                      \{}
+\DoxyCodeLine{49     sensors.insert(s.\mbox{\hyperlink{class_sensor_a5acec410b269bc6ea4960bbd5d45558e}{getSensor\_id}}(), s);}
+\DoxyCodeLine{50 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_manager_a3da0b0b4fbd1f8cce393eda98c8660a4}\label{class_sensor_manager_a3da0b0b4fbd1f8cce393eda98c8660a4}} 
+\index{SensorManager@{SensorManager}!avgCityValue@{avgCityValue}}
+\index{avgCityValue@{avgCityValue}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{avgCityValue()}{avgCityValue()}}
+{\footnotesize\ttfamily double Sensor\+Manager\+::avg\+City\+Value (\begin{DoxyParamCaption}\item[{Q\+String}]{city\+Name,  }\item[{Q\+String}]{measure,  }\item[{Q\+String}]{time\+From,  }\item[{Q\+String}]{time\+Until }\end{DoxyParamCaption})}
+
+
+
+Method to get average value in the city during the timeperiod. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Name} & the name of the city in Germany \\
+\hline
+{\em measure} & \char`\"{}\+P1\char`\"{} or \char`\"{}\+P2\char`\"{} or \char`\"{}temperature\char`\"{} or \char`\"{}humidity\char`\"{} \\
+\hline
+{\em time\+From} & start time \\
+\hline
+{\em time\+Until} & end time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+average value 
+\end{DoxyReturn}
+
+
+Definition at line 127 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{127                                                                                                         \{}
+\DoxyCodeLine{128     cout << \textcolor{stringliteral}{"Start computing average "} << measure.toStdString() << \textcolor{stringliteral}{" in "} << cityName.toStdString() << endl;}
+\DoxyCodeLine{129     \mbox{\hyperlink{class_sensor_manager_a86f5026f7d373da3f41b30ff13f00b40}{findSensorsInCity}}(cityName, measure);}
+\DoxyCodeLine{130     \textcolor{keywordtype}{double} sum = 0;}
+\DoxyCodeLine{131     \textcolor{keywordtype}{double} count = 0;}
+\DoxyCodeLine{132     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} nr : sensorsList)\{}
+\DoxyCodeLine{133         \textcolor{keywordtype}{double} SensorAvg = sensors.values(nr).first().getAverage(timeFrom, timeUntil, measure);}
+\DoxyCodeLine{134         \textcolor{keywordflow}{if} (-\/9999 != SensorAvg)\{}
+\DoxyCodeLine{135             sum += SensorAvg;}
+\DoxyCodeLine{136             count++;}
+\DoxyCodeLine{137         \}}
+\DoxyCodeLine{138     \}}
+\DoxyCodeLine{139     \textcolor{keywordflow}{if} (0==count) \{}
+\DoxyCodeLine{140         cout << \textcolor{stringliteral}{"0 sensors in this area or time interval!"} << endl;}
+\DoxyCodeLine{141         \textcolor{keywordflow}{return} -\/9999;}
+\DoxyCodeLine{142     \}}
+\DoxyCodeLine{143     cout << \textcolor{stringliteral}{"Successful! "} << count << \textcolor{stringliteral}{" sensors were considered."} << endl;}
+\DoxyCodeLine{144     \textcolor{keywordflow}{return} sum/count;}
+\DoxyCodeLine{145 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_manager_a86f5026f7d373da3f41b30ff13f00b40}\label{class_sensor_manager_a86f5026f7d373da3f41b30ff13f00b40}} 
+\index{SensorManager@{SensorManager}!findSensorsInCity@{findSensorsInCity}}
+\index{findSensorsInCity@{findSensorsInCity}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{findSensorsInCity()}{findSensorsInCity()}}
+{\footnotesize\ttfamily void Sensor\+Manager\+::find\+Sensors\+In\+City (\begin{DoxyParamCaption}\item[{Q\+String}]{city\+Name,  }\item[{Q\+String}]{measure }\end{DoxyParamCaption})}
+
+
+
+Method to find sensors inside the city rectangle and temporarily store them. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Name} & the name of the city in Germany \\
+\hline
+{\em measure} & \char`\"{}\+P1\char`\"{} or \char`\"{}\+P2\char`\"{} or \char`\"{}temperature\char`\"{} or \char`\"{}humidity\char`\"{} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 109 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{109                                                                       \{}
+\DoxyCodeLine{110     \textcolor{keywordflow}{if} (cityName == lastCity \&\& measure == lastMeasure) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{111     lastMeasure = measure;}
+\DoxyCodeLine{112     sensorsList.clear();}
+\DoxyCodeLine{113     QGeoRectangle rectangle = \mbox{\hyperlink{class_sensor_manager_a16638531e55ddde56d52e61abf1bf46c}{getCityRectangle}}(cityName);}
+\DoxyCodeLine{114     \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_sensor}{Sensor}} s : sensors)\{}
+\DoxyCodeLine{115         \textcolor{keywordflow}{if}(s.getLatitude()<rectangle.bottomRight().latitude()}
+\DoxyCodeLine{116                 \&\& s.getLatitude()>rectangle.topLeft().latitude()}
+\DoxyCodeLine{117                 \&\& s.getLongitude()<rectangle.bottomRight().longitude()}
+\DoxyCodeLine{118                 \&\& s.getLongitude()>rectangle.topLeft().longitude())\{}
+\DoxyCodeLine{119             \textcolor{keywordflow}{if} (((measure == \textcolor{stringliteral}{"P1"} || measure == \textcolor{stringliteral}{"P2"}) \&\& s.getSensor\_type()==\textcolor{stringliteral}{"SDS011"}) ||}
+\DoxyCodeLine{120                     ((measure == \textcolor{stringliteral}{"temperature"} || measure == \textcolor{stringliteral}{"humidity"}) \&\& s.getSensor\_type()==\textcolor{stringliteral}{"DHT22"}))\{}
+\DoxyCodeLine{121                 sensorsList.append(s.getSensor\_id());}
+\DoxyCodeLine{122             \}}
+\DoxyCodeLine{123         \}}
+\DoxyCodeLine{124     \}}
+\DoxyCodeLine{125 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_manager_ad4ecc6c44c7317f89950548b2868e2fb}\label{class_sensor_manager_ad4ecc6c44c7317f89950548b2868e2fb}} 
+\index{SensorManager@{SensorManager}!getAverage@{getAverage}}
+\index{getAverage@{getAverage}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{getAverage()}{getAverage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Sensor\+Manager\+::get\+Average (\begin{DoxyParamCaption}\item[{double}]{lon,  }\item[{double}]{lat,  }\item[{Q\+String}]{time\+From,  }\item[{Q\+String}]{time\+Until,  }\item[{Q\+String}]{measure }\end{DoxyParamCaption})}
+
+
+
+Method to get average value of the sensor in the timeperiod. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lon} & Longitude coordinate of the sensor \\
+\hline
+{\em lat} & Latitude coordinate of the sensor \\
+\hline
+{\em time\+From} & start time \\
+\hline
+{\em time\+Until} & end time \\
+\hline
+{\em measure} & \char`\"{}\+P1\char`\"{} or \char`\"{}\+P2\char`\"{} or \char`\"{}temperature\char`\"{} or \char`\"{}humidity\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+average value 
+\end{DoxyReturn}
+
+
+Definition at line 105 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{105                                                                                                             \{}
+\DoxyCodeLine{106     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_sensor_manager_a04601c0172a5c884eb6f5effa8b5cd67}{getAverage}}(\mbox{\hyperlink{class_sensor_manager_af3fee6becb5b2d8a02f35ef531df5763}{getSensorIdOnPosition}}(lon, lat, measure), timeFrom, timeUntil, measure);}
+\DoxyCodeLine{107 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_manager_a04601c0172a5c884eb6f5effa8b5cd67}\label{class_sensor_manager_a04601c0172a5c884eb6f5effa8b5cd67}} 
+\index{SensorManager@{SensorManager}!getAverage@{getAverage}}
+\index{getAverage@{getAverage}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{getAverage()}{getAverage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double Sensor\+Manager\+::get\+Average (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{Q\+String}]{time\+From,  }\item[{Q\+String}]{time\+Until,  }\item[{Q\+String}]{measure }\end{DoxyParamCaption})}
+
+
+
+Method to get average value of the sensor in the given timeperiod. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Sensor-\/\+ID \\
+\hline
+{\em time\+From} & Start time of the period \\
+\hline
+{\em time\+Until} & End time of the period \\
+\hline
+{\em measure} & \char`\"{}\+P1\char`\"{} or \char`\"{}\+P2\char`\"{} or \char`\"{}temperature\char`\"{} or \char`\"{}humidity\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Average value 
+\end{DoxyReturn}
+
+
+Definition at line 97 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{97                                                                                             \{}
+\DoxyCodeLine{98     \textcolor{keywordflow}{return} sensors.find(\textcolor{keywordtype}{id})-\/>getAverage(timeFrom, timeUntil, measure);}
+\DoxyCodeLine{99 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}\label{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}} 
+\index{SensorManager@{SensorManager}!getAveragePolygonValue@{getAveragePolygonValue}}
+\index{getAveragePolygonValue@{getAveragePolygonValue}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{getAveragePolygonValue()}{getAveragePolygonValue()}}
+{\footnotesize\ttfamily double Sensor\+Manager\+::get\+Average\+Polygon\+Value (\begin{DoxyParamCaption}\item[{double}]{polyY\mbox{[}6\mbox{]},  }\item[{double}]{polyX\mbox{[}6\mbox{]},  }\item[{Q\+String}]{data\+Value }\end{DoxyParamCaption})}
+
+
+
+Method to get average temperature or other value of sensors inside a polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em polyY} & Y coordinates of the polygon \\
+\hline
+{\em polyX} & X coordinates of the polygon \\
+\hline
+{\em data\+Value} & the value of the sensor (temperature or fine dust) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Average value (temperature, fine dust) inside given polygon 
+\end{DoxyReturn}
+
+
+Definition at line 211 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{211                                                                                                \{}
+\DoxyCodeLine{212     \textcolor{keywordtype}{int} counter = 0;}
+\DoxyCodeLine{213     \textcolor{keywordtype}{double} averageValue = 0.0;}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215     \textcolor{keywordflow}{for} ( \textcolor{keyword}{auto} it = this-\/>sensors.begin(); it != this-\/>sensors.end(); ++it )}
+\DoxyCodeLine{216     \{}
+\DoxyCodeLine{217         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_sensor_manager_aecd2eecadc9e2e38462b1b72f4498c48}{pointInPolygon}}(polyY,polyX,it-\/>getLatitude(),it-\/>getLongitude()) == \textcolor{keyword}{true})\{}
+\DoxyCodeLine{218             \textcolor{keywordflow}{if} (((dataValue == \textcolor{stringliteral}{"P1"} || dataValue == \textcolor{stringliteral}{"P2"}) \&\& it-\/>getSensor\_type()==\textcolor{stringliteral}{"SDS011"}) ||((dataValue == \textcolor{stringliteral}{"temperature"} || dataValue == \textcolor{stringliteral}{"humidity"}) \&\& it-\/>getSensor\_type()==\textcolor{stringliteral}{"DHT22"}))\{}
+\DoxyCodeLine{219                 averageValue+=it-\/>getLast(dataValue);}
+\DoxyCodeLine{220                 ++counter;}
+\DoxyCodeLine{221             \}}
+\DoxyCodeLine{222         \}}
+\DoxyCodeLine{223     \}}
+\DoxyCodeLine{224     \textcolor{keywordflow}{if} (counter == 0)\{}
+\DoxyCodeLine{225         \textcolor{keywordflow}{return} -\/9999;}
+\DoxyCodeLine{226     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{227         \textcolor{keywordflow}{return} averageValue/counter;}
+\DoxyCodeLine{228     \}}
+\DoxyCodeLine{229 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_manager_a0df802f4c95f457f58a5ce3d490b17d2}\label{class_sensor_manager_a0df802f4c95f457f58a5ce3d490b17d2}} 
+\index{SensorManager@{SensorManager}!getCityCenter@{getCityCenter}}
+\index{getCityCenter@{getCityCenter}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{getCityCenter()}{getCityCenter()}}
+{\footnotesize\ttfamily Q\+Geo\+Coordinate Sensor\+Manager\+::get\+City\+Center (\begin{DoxyParamCaption}\item[{Q\+String}]{city\+Name }\end{DoxyParamCaption})}
+
+
+
+Method to get coordinates of the point in the city center. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Name} & the name of the city in Germany \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Coordinates of the pint 
+\end{DoxyReturn}
+
+
+Definition at line 207 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{207                                                            \{}
+\DoxyCodeLine{208     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_sensor_manager_a21145d2a46ed1c999785fd30ddadd4c0}{getLocation}}(cityName).coordinate();}
+\DoxyCodeLine{209 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_manager_a16638531e55ddde56d52e61abf1bf46c}\label{class_sensor_manager_a16638531e55ddde56d52e61abf1bf46c}} 
+\index{SensorManager@{SensorManager}!getCityRectangle@{getCityRectangle}}
+\index{getCityRectangle@{getCityRectangle}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{getCityRectangle()}{getCityRectangle()}}
+{\footnotesize\ttfamily Q\+Geo\+Rectangle Sensor\+Manager\+::get\+City\+Rectangle (\begin{DoxyParamCaption}\item[{Q\+String}]{city\+Name }\end{DoxyParamCaption})}
+
+
+
+Method to get rectangle that includes the city. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Name} & the name of the city in Germany \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+georectangle with O\+N\+LY top\+Left and bottom\+Right set 
+\end{DoxyReturn}
+
+
+Definition at line 200 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{200                                                              \{}
+\DoxyCodeLine{201     \textcolor{keywordflow}{if} (lastCity == cityName) \textcolor{keywordflow}{return} tmpRectangle;}
+\DoxyCodeLine{202     lastCity = cityName;}
+\DoxyCodeLine{203     tmpRectangle = \mbox{\hyperlink{class_sensor_manager_a21145d2a46ed1c999785fd30ddadd4c0}{getLocation}}(cityName).boundingBox();}
+\DoxyCodeLine{204     \textcolor{keywordflow}{return} tmpRectangle;}
+\DoxyCodeLine{205 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_manager_a35fdecaa7398d8b868e419b13153316a}\label{class_sensor_manager_a35fdecaa7398d8b868e419b13153316a}} 
+\index{SensorManager@{SensorManager}!getLast@{getLast}}
+\index{getLast@{getLast}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{getLast()}{getLast()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Sensor\+Manager\+::get\+Last (\begin{DoxyParamCaption}\item[{double}]{lon,  }\item[{double}]{lat,  }\item[{Q\+String}]{measure }\end{DoxyParamCaption})}
+
+
+
+Method to get last value of the sensor at the specific location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lon} & Longitude coordinate of the location \\
+\hline
+{\em lat} & Latidude coordinate of the location \\
+\hline
+{\em measure} & \char`\"{}\+P1\char`\"{} or \char`\"{}\+P2\char`\"{} or \char`\"{}temperature\char`\"{} or \char`\"{}humidity\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+last value 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{101                                                                     \{}
+\DoxyCodeLine{102     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_sensor_manager_af99c678a50b862dde9c5a30d8f367d36}{getLast}}(\mbox{\hyperlink{class_sensor_manager_af3fee6becb5b2d8a02f35ef531df5763}{getSensorIdOnPosition}}(lon, lat, measure), measure);}
+\DoxyCodeLine{103 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_manager_af99c678a50b862dde9c5a30d8f367d36}\label{class_sensor_manager_af99c678a50b862dde9c5a30d8f367d36}} 
+\index{SensorManager@{SensorManager}!getLast@{getLast}}
+\index{getLast@{getLast}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{getLast()}{getLast()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double Sensor\+Manager\+::get\+Last (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{Q\+String}]{measure }\end{DoxyParamCaption})}
+
+
+
+Method to get last value of the sensor with the specific id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & sensor-\/\+ID \\
+\hline
+{\em measure} & \char`\"{}\+P1\char`\"{} or \char`\"{}\+P2\char`\"{} or \char`\"{}temperature\char`\"{} or \char`\"{}humidity\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Last value 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{93                                                     \{}
+\DoxyCodeLine{94     \textcolor{keywordflow}{return} sensors.find(\textcolor{keywordtype}{id})-\/>getLast(measure);}
+\DoxyCodeLine{95 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_manager_a21145d2a46ed1c999785fd30ddadd4c0}\label{class_sensor_manager_a21145d2a46ed1c999785fd30ddadd4c0}} 
+\index{SensorManager@{SensorManager}!getLocation@{getLocation}}
+\index{getLocation@{getLocation}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{getLocation()}{getLocation()}}
+{\footnotesize\ttfamily Q\+Geo\+Location Sensor\+Manager\+::get\+Location (\begin{DoxyParamCaption}\item[{Q\+String}]{city\+Name }\end{DoxyParamCaption})}
+
+
+
+Method to get location of the city. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Name} & the name of the city in Germany \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+location 
+\end{DoxyReturn}
+
+
+Definition at line 147 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{147                                                        \{}
+\DoxyCodeLine{148     QGeoLocation location;}
+\DoxyCodeLine{149     QEventLoop eventLoop;}
+\DoxyCodeLine{150     QString entry = \textcolor{stringliteral}{"esri"};}
+\DoxyCodeLine{151     QGeoServiceProvider qGeoService(entry);}
+\DoxyCodeLine{152     QGeoCodingManager *pQGeoCoder = qGeoService.geocodingManager();}
+\DoxyCodeLine{153     \textcolor{keywordflow}{if} (!pQGeoCoder) \{}
+\DoxyCodeLine{154         cerr << \textcolor{stringliteral}{"GeoCodingManager '"} << entry.toStdString() << \textcolor{stringliteral}{"' not available!"} << endl;}
+\DoxyCodeLine{155         \textcolor{keywordflow}{return} location;}
+\DoxyCodeLine{156     \}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158     QLocale qLocaleC(QLocale::C, QLocale::AnyCountry);}
+\DoxyCodeLine{159     pQGeoCoder-\/>setLocale(qLocaleC);}
+\DoxyCodeLine{160     \textcolor{comment}{// build address}}
+\DoxyCodeLine{161     QGeoAddress qGeoAddr;}
+\DoxyCodeLine{162     qGeoAddr.setCountry(QString::fromUtf8(\textcolor{stringliteral}{"Germany"}));}
+\DoxyCodeLine{163     qGeoAddr.setCity(cityName);}
+\DoxyCodeLine{164     QGeoCodeReply *pQGeoCode = pQGeoCoder-\/>geocode(qGeoAddr);}
+\DoxyCodeLine{165     \textcolor{keywordflow}{if} (!pQGeoCode) \{}
+\DoxyCodeLine{166         cerr << \textcolor{stringliteral}{"GeoCoding totally failed!"} << endl;}
+\DoxyCodeLine{167         \textcolor{keywordflow}{return} location;}
+\DoxyCodeLine{168     \}}
+\DoxyCodeLine{169     QObject::connect(pQGeoCode, \&QGeoCodeReply::finished,}
+\DoxyCodeLine{170                      [\&eventLoop, \&location, pQGeoCode]()\{}
+\DoxyCodeLine{171         cout << \textcolor{stringliteral}{"Reply: "} << pQGeoCode-\/>errorString().toStdString();}
+\DoxyCodeLine{172         \textcolor{keywordflow}{switch} (pQGeoCode-\/>error()) \{}
+\DoxyCodeLine{173 \#define CASE(ERROR) \(\backslash\)}
+\DoxyCodeLine{174         case QGeoCodeReply::ERROR: cerr << \#ERROR << endl; break}
+\DoxyCodeLine{175         CASE(NoError);}
+\DoxyCodeLine{176         CASE(EngineNotSetError);}
+\DoxyCodeLine{177         CASE(CommunicationError);}
+\DoxyCodeLine{178         CASE(ParseError);}
+\DoxyCodeLine{179         CASE(UnsupportedOptionError);}
+\DoxyCodeLine{180         CASE(CombinationError);}
+\DoxyCodeLine{181         CASE(UnknownError);}
+\DoxyCodeLine{182 \#undef CASE}
+\DoxyCodeLine{183         default: cerr << \textcolor{stringliteral}{"Undocumented error!"} << endl;}
+\DoxyCodeLine{184         \}}
+\DoxyCodeLine{185         if (pQGeoCode-\/>error() != QGeoCodeReply::NoError) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{186         QList<QGeoLocation> qGeoLocs = pQGeoCode-\/>locations();}
+\DoxyCodeLine{187         cout << qGeoLocs.size() << \textcolor{stringliteral}{" location(s) returned."} << endl;}
+\DoxyCodeLine{188         for (QGeoLocation \&qGeoLoc : qGeoLocs) \{}
+\DoxyCodeLine{189             location = qGeoLoc;}
+\DoxyCodeLine{190             \textcolor{keywordflow}{if} (qGeoLoc.address().city() == \textcolor{stringliteral}{""})\{}
+\DoxyCodeLine{191                 cout << \textcolor{stringliteral}{"The city was not found!"} << endl;}
+\DoxyCodeLine{192             \}}
+\DoxyCodeLine{193         \}}
+\DoxyCodeLine{194         eventLoop.exit(0);}
+\DoxyCodeLine{195     \});}
+\DoxyCodeLine{196     eventLoop.exec();}
+\DoxyCodeLine{197     \textcolor{keywordflow}{return} location;}
+\DoxyCodeLine{198 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_manager_af3fee6becb5b2d8a02f35ef531df5763}\label{class_sensor_manager_af3fee6becb5b2d8a02f35ef531df5763}} 
+\index{SensorManager@{SensorManager}!getSensorIdOnPosition@{getSensorIdOnPosition}}
+\index{getSensorIdOnPosition@{getSensorIdOnPosition}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{getSensorIdOnPosition()}{getSensorIdOnPosition()}}
+{\footnotesize\ttfamily int Sensor\+Manager\+::get\+Sensor\+Id\+On\+Position (\begin{DoxyParamCaption}\item[{double}]{lon,  }\item[{double}]{lat,  }\item[{Q\+String}]{measure }\end{DoxyParamCaption})}
+
+
+
+Method to get ID of the sensor on the position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lon} & Longitude coordinate of the position \\
+\hline
+{\em lat} & Latitude coordinate of the position \\
+\hline
+{\em measure} & \char`\"{}\+P1\char`\"{} or \char`\"{}\+P2\char`\"{} or \char`\"{}temperature\char`\"{} or \char`\"{}humidity\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sensor-\/\+ID 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{81                                                                                \{}
+\DoxyCodeLine{82     \textcolor{keywordflow}{if} (measure == \textcolor{stringliteral}{"P1"} || measure == \textcolor{stringliteral}{"P2"})\{}
+\DoxyCodeLine{83         \mbox{\hyperlink{class_sensor}{Sensor}} s(1, \textcolor{stringliteral}{"SDS011"}, lat, lon);}
+\DoxyCodeLine{84         \textcolor{keywordflow}{return} sensors.find(sensors.key(s))-\/>getSensor\_id();}
+\DoxyCodeLine{85     \}}
+\DoxyCodeLine{86     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (measure == \textcolor{stringliteral}{"temperature"} || measure == \textcolor{stringliteral}{"humidity"}) \{}
+\DoxyCodeLine{87         \mbox{\hyperlink{class_sensor}{Sensor}} s(1, \textcolor{stringliteral}{"DHT22"}, lat, lon);}
+\DoxyCodeLine{88         \textcolor{keywordflow}{return} sensors.find(sensors.key(s))-\/>getSensor\_id();}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{91 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_manager_a91c39b08d99baaa99ee9a9c58647ccdc}\label{class_sensor_manager_a91c39b08d99baaa99ee9a9c58647ccdc}} 
+\index{SensorManager@{SensorManager}!LoadDataFromDirectoryToDB@{LoadDataFromDirectoryToDB}}
+\index{LoadDataFromDirectoryToDB@{LoadDataFromDirectoryToDB}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{LoadDataFromDirectoryToDB()}{LoadDataFromDirectoryToDB()}}
+{\footnotesize\ttfamily void Sensor\+Manager\+::\+Load\+Data\+From\+Directory\+To\+DB (\begin{DoxyParamCaption}\item[{std\+::string}]{path\+To\+Dir }\end{DoxyParamCaption})}
+
+
+
+Load all C\+SV in the directory to the DB. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+To\+Dir} & Path to the directory \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36                                                               \{}
+\DoxyCodeLine{37     QDir directory(pathToDir.c\_str());}
+\DoxyCodeLine{38     QStringList files = directory.entryList(QStringList() << \textcolor{stringliteral}{"*.csv"} << \textcolor{stringliteral}{"*.CSV"},QDir::Files);}
+\DoxyCodeLine{39     \textcolor{keywordflow}{foreach}(QString filename, files)\{}
+\DoxyCodeLine{40         std::string filePath = pathToDir + filename.toStdString();}
+\DoxyCodeLine{41         std::cout << filePath << std::endl;}
+\DoxyCodeLine{42         \textcolor{comment}{//create Sensor object to read data from CSV}}
+\DoxyCodeLine{43         \textcolor{comment}{//The creation of the object starts the export of data into the DB automatically}}
+\DoxyCodeLine{44         \mbox{\hyperlink{class_sensor}{Sensor}} s (filePath);}
+\DoxyCodeLine{45     \}}
+\DoxyCodeLine{46 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_manager_aecd2eecadc9e2e38462b1b72f4498c48}\label{class_sensor_manager_aecd2eecadc9e2e38462b1b72f4498c48}} 
+\index{SensorManager@{SensorManager}!pointInPolygon@{pointInPolygon}}
+\index{pointInPolygon@{pointInPolygon}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{pointInPolygon()}{pointInPolygon()}}
+{\footnotesize\ttfamily bool Sensor\+Manager\+::point\+In\+Polygon (\begin{DoxyParamCaption}\item[{double}]{polyY\mbox{[}6\mbox{]},  }\item[{double}]{polyX\mbox{[}6\mbox{]},  }\item[{double}]{y,  }\item[{double}]{x }\end{DoxyParamCaption})}
+
+
+
+Method to prove if a point is located inside a polygon/hexagon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em polyY} & Is the array with Y coordinates of the polygon. \\
+\hline
+{\em polyX} & Is the array with X coordinates of the polygon. \\
+\hline
+{\em poly\+Corners} & Is the amount of corners of the polygon (we use 6 corners per default). \\
+\hline
+{\em y} & Is the y coordinate of the point. \\
+\hline
+{\em x} & Is the x coordinate of the point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the point is in the polygon, false if not. 
+\end{DoxyReturn}
+
+
+Definition at line 231 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{232 \{}
+\DoxyCodeLine{233     \textcolor{keywordtype}{int} polyCorners = 6;}
+\DoxyCodeLine{234     \textcolor{keywordtype}{int}   i, j = polyCorners-\/1;}
+\DoxyCodeLine{235     \textcolor{keywordtype}{bool}  oddNodes=\textcolor{keyword}{false};}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237     \textcolor{keywordflow}{for} (i=0; i<polyCorners; i++) \{}
+\DoxyCodeLine{238         \textcolor{keywordflow}{if} ((polyY[i]<y \&\& polyY[j]>=y)||(polyY[j]<y \&\& polyY[i]>=y)) \{}
+\DoxyCodeLine{239             \textcolor{keywordflow}{if} (polyX[i]+(y-\/polyY[i])/(polyY[j]-\/polyY[i])*(polyX[j]-\/polyX[i])<x) \{}
+\DoxyCodeLine{240                 oddNodes=!oddNodes; \}\}}
+\DoxyCodeLine{241         j=i;}
+\DoxyCodeLine{242     \}}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244     \textcolor{keywordflow}{return} oddNodes;}
+\DoxyCodeLine{245 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_manager_a91a07b501590d26eabd27a9e83e9967e}\label{class_sensor_manager_a91a07b501590d26eabd27a9e83e9967e}} 
+\index{SensorManager@{SensorManager}!readBackupFile@{readBackupFile}}
+\index{readBackupFile@{readBackupFile}!SensorManager@{SensorManager}}
+\doxysubsubsection{\texorpdfstring{readBackupFile()}{readBackupFile()}}
+{\footnotesize\ttfamily void Sensor\+Manager\+::read\+Backup\+File (\begin{DoxyParamCaption}\item[{Q\+String}]{measure }\end{DoxyParamCaption})}
+
+
+
+Read specific file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em measure} & \char`\"{}\+P1\char`\"{} or \char`\"{}\+P2\char`\"{} or \char`\"{}temperature\char`\"{} or \char`\"{}humidity\char`\"{} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file Sensormanager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63                                                  \{}
+\DoxyCodeLine{64     ifstream fin;}
+\DoxyCodeLine{65     \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{66     QString path = \textcolor{stringliteral}{"../FineDustMap/Backup/record"};}
+\DoxyCodeLine{67     path.append(measure);}
+\DoxyCodeLine{68     path.append(\textcolor{stringliteral}{"Backup.csv"});}
+\DoxyCodeLine{69     fin.open(path.toStdString(), ifstream::in);}
+\DoxyCodeLine{70     \textcolor{keywordflow}{while} (getline(fin, line)) \{}
+\DoxyCodeLine{71         QString l = QString::fromStdString(line);}
+\DoxyCodeLine{72         \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = l.section(\textcolor{stringliteral}{";"}, 0, 0).toInt();}
+\DoxyCodeLine{73         \textcolor{keywordflow}{if} (measure == \textcolor{stringliteral}{"P1"} || measure == \textcolor{stringliteral}{"temperature"})}
+\DoxyCodeLine{74             sensors.find(\textcolor{keywordtype}{id})-\/>addRecord(l.section(\textcolor{stringliteral}{";"}, 1, 1).toStdString(), l.section(\textcolor{stringliteral}{";"}, 2, 2).toDouble(), -\/1);}
+\DoxyCodeLine{75         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{76             sensors.find(\textcolor{keywordtype}{id})-\/>addRecord(l.section(\textcolor{stringliteral}{";"}, 1, 1).toStdString(), -\/1, l.section(\textcolor{stringliteral}{";"}, 2, 2).toDouble());}
+\DoxyCodeLine{77     \}}
+\DoxyCodeLine{78     fin.close();}
+\DoxyCodeLine{79 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/ilhajr/\+Desktop/fine-\/dust-\/data-\/visualization/src/\+Fine\+Dust\+Map/Sensormanager.\+h\item 
+/\+Users/ilhajr/\+Desktop/fine-\/dust-\/data-\/visualization/src/\+Fine\+Dust\+Map/Sensormanager.\+cpp\end{DoxyCompactItemize}

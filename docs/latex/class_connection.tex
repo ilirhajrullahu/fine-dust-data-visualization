@@ -1,0 +1,470 @@
+\hypertarget{class_connection}{}\doxysection{Connection Class Reference}
+\label{class_connection}\index{Connection@{Connection}}
+
+
+Class to connect with influx\+DB and write data there.  
+
+
+
+
+{\ttfamily \#include $<$Connection.\+h$>$}
+
+Inheritance diagram for Connection\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_connection}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_connection_a8afe63c8ac9873d6e01e2ca19218344e}\label{class_connection_a8afe63c8ac9873d6e01e2ca19218344e}} 
+{\bfseries Connection} (Q\+Object $\ast$parent=nullptr)
+\item 
+void \mbox{\hyperlink{class_connection_adf7b5cf290e8f21fff8504b3ee8b5091}{post\+Data}} (int id, std\+::string type, double lon, double lat, double first, double second, std\+::string timestamp)
+\begin{DoxyCompactList}\small\item\em Method to persist data in the DB. \end{DoxyCompactList}\item 
+Q\+Network\+Reply $\ast$ \mbox{\hyperlink{class_connection_a0ffb12b2e72c2d82bd4048ffa879475d}{execute\+Query}} (Q\+String query)
+\begin{DoxyCompactList}\small\item\em Execute the query given as String in the parameter and return the request. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_connection_ae11136edc2ae03e914d1ba77379b9293}{get\+Value\+From\+Reply}} (Q\+String reply)
+\begin{DoxyCompactList}\small\item\em Method to unpack reply J\+S\+ON. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_connection_aebb00b103159d19386596de83860df2c}{get\+Last\+Value}} (double lon, double lat, Q\+String measure)
+\begin{DoxyCompactList}\small\item\em Method to get last value in the specific point. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE double \mbox{\hyperlink{class_connection_afb0c9f7b6b896e0a056b1e2490cac750}{get\+Last\+Value}} (int id, Q\+String measure)
+\begin{DoxyCompactList}\small\item\em Method to get last P1 value of the sensor. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE double \mbox{\hyperlink{class_connection_a87000b711b4d87f2c6e114bf2b4a221f}{get\+Average\+Within\+Time\+Range}} (double lon, double lat, Q\+String time\+From, Q\+String time\+Until, Q\+String measure)
+\begin{DoxyCompactList}\small\item\em Get average value in the specific point within given timerange. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_connection_a5ef7105a50ba95dfb0a22d8b52b06df1}{backup}} (Q\+String start\+Time, Q\+String end\+Time, Q\+String frequency)
+\begin{DoxyCompactList}\small\item\em Backup copy of the DB as C\+SV files for sensors and each mesure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_connection_a358c2895b82d55e4c17d574fc685dd0f}\label{class_connection_a358c2895b82d55e4c17d574fc685dd0f}} 
+void \mbox{\hyperlink{class_connection_a358c2895b82d55e4c17d574fc685dd0f}{backup\+Sensors}} ()
+\begin{DoxyCompactList}\small\item\em Method to write all Sensors to C\+SV. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_connection_a9628e59e3f4cec1ec80ba05c4e415eb7}{backup\+Records}} (Q\+String measure, Q\+String start\+Time, Q\+String end\+Time, Q\+String frequency)
+\begin{DoxyCompactList}\small\item\em Write C\+SV with all records. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to connect with influx\+DB and write data there. 
+
+
+
+Definition at line 12 of file Connection.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_connection_a5ef7105a50ba95dfb0a22d8b52b06df1}\label{class_connection_a5ef7105a50ba95dfb0a22d8b52b06df1}} 
+\index{Connection@{Connection}!backup@{backup}}
+\index{backup@{backup}!Connection@{Connection}}
+\doxysubsubsection{\texorpdfstring{backup()}{backup()}}
+{\footnotesize\ttfamily void Connection\+::backup (\begin{DoxyParamCaption}\item[{Q\+String}]{start\+Time,  }\item[{Q\+String}]{end\+Time,  }\item[{Q\+String}]{frequency }\end{DoxyParamCaption})}
+
+
+
+Backup copy of the DB as C\+SV files for sensors and each mesure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Start time, for example\+: \char`\"{}2020-\/06-\/01\+T00\+:00\+:00\+Z\char`\"{} \\
+\hline
+{\em end\+Time} & End time, for example\+: \char`\"{}2020-\/06-\/02\+T00\+:00\+:00\+Z\char`\"{} \\
+\hline
+{\em frequency} & How many records per sensor. Ex.\+: every hour\+: \char`\"{}1h\char`\"{}, 20 minutes\+: \char`\"{}20m\char`\"{} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 159 of file Connection.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{159                                                                             \{}
+\DoxyCodeLine{160     \mbox{\hyperlink{class_connection_a358c2895b82d55e4c17d574fc685dd0f}{backupSensors}}();}
+\DoxyCodeLine{161     \mbox{\hyperlink{class_connection_a9628e59e3f4cec1ec80ba05c4e415eb7}{backupRecords}}(\textcolor{stringliteral}{"P1"}, startTime, endTime, frequency);}
+\DoxyCodeLine{162     \mbox{\hyperlink{class_connection_a9628e59e3f4cec1ec80ba05c4e415eb7}{backupRecords}}(\textcolor{stringliteral}{"P2"}, startTime, endTime, frequency);}
+\DoxyCodeLine{163     \mbox{\hyperlink{class_connection_a9628e59e3f4cec1ec80ba05c4e415eb7}{backupRecords}}(\textcolor{stringliteral}{"temperature"}, startTime, endTime, frequency);}
+\DoxyCodeLine{164     \mbox{\hyperlink{class_connection_a9628e59e3f4cec1ec80ba05c4e415eb7}{backupRecords}}(\textcolor{stringliteral}{"humidity"}, startTime, endTime, frequency);}
+\DoxyCodeLine{165 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_a9628e59e3f4cec1ec80ba05c4e415eb7}\label{class_connection_a9628e59e3f4cec1ec80ba05c4e415eb7}} 
+\index{Connection@{Connection}!backupRecords@{backupRecords}}
+\index{backupRecords@{backupRecords}!Connection@{Connection}}
+\doxysubsubsection{\texorpdfstring{backupRecords()}{backupRecords()}}
+{\footnotesize\ttfamily void Connection\+::backup\+Records (\begin{DoxyParamCaption}\item[{Q\+String}]{measure,  }\item[{Q\+String}]{start\+Time,  }\item[{Q\+String}]{end\+Time,  }\item[{Q\+String}]{frequency }\end{DoxyParamCaption})}
+
+
+
+Write C\+SV with all records. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em measure} & Type of the values (\char`\"{}\+P1\char`\"{} or \char`\"{}\+P2\char`\"{} or \char`\"{}temperature\char`\"{} or \char`\"{}humidity\char`\"{}) \\
+\hline
+{\em start\+Time} & Start time, for example\+: \char`\"{}2020-\/06-\/01\+T00\+:00\+:00\+Z\char`\"{} \\
+\hline
+{\em end\+Time} & End time, for example\+: \char`\"{}2020-\/06-\/02\+T00\+:00\+:00\+Z\char`\"{} \\
+\hline
+{\em frequency} & How many records per sensor. Ex.\+: every hour\+: \char`\"{}1h\char`\"{}, 20 minutes\+: \char`\"{}20m\char`\"{} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 206 of file Connection.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{206                                                                                                     \{}
+\DoxyCodeLine{207     cout << \textcolor{stringliteral}{"Starting backup "} << measure.toStdString() << \textcolor{stringliteral}{" records..."} << endl;}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209     std::ofstream myfile;}
+\DoxyCodeLine{210     \textcolor{keywordtype}{string} path = \textcolor{stringliteral}{"../FineDustMap/Backup/record"};}
+\DoxyCodeLine{211     path += measure.toStdString();}
+\DoxyCodeLine{212     path += \textcolor{stringliteral}{"Backup.csv"};}
+\DoxyCodeLine{213     myfile.open (path, std::ofstream::trunc);}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215     \textcolor{comment}{//Get sensor data frm the DB}}
+\DoxyCodeLine{216     QString selectStatement = \textcolor{stringliteral}{"SELECT mean("};}
+\DoxyCodeLine{217     selectStatement.append(measure);}
+\DoxyCodeLine{218     selectStatement.append(\textcolor{stringliteral}{") FROM sensor WHERE time>'"});}
+\DoxyCodeLine{219     selectStatement.append(startTime);}
+\DoxyCodeLine{220     selectStatement.append(\textcolor{stringliteral}{"' AND time<'"});}
+\DoxyCodeLine{221     selectStatement.append(endTime);}
+\DoxyCodeLine{222     selectStatement.append(\textcolor{stringliteral}{"'GROUP BY time("});}
+\DoxyCodeLine{223     selectStatement.append(frequency);}
+\DoxyCodeLine{224     selectStatement.append(\textcolor{stringliteral}{"), id FILL(none)"});}
+\DoxyCodeLine{225     QNetworkReply *reply = this-\/>\mbox{\hyperlink{class_connection_a0ffb12b2e72c2d82bd4048ffa879475d}{executeQuery}}(selectStatement);}
+\DoxyCodeLine{226     QString strReply = (QString)reply-\/>readAll();}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228     \textcolor{comment}{//unpack JSON}}
+\DoxyCodeLine{229     QJsonDocument jsonResponse = QJsonDocument::fromJson(strReply.toUtf8());}
+\DoxyCodeLine{230     \textcolor{comment}{//response object}}
+\DoxyCodeLine{231     QJsonObject jsonObject = jsonResponse.object();}
+\DoxyCodeLine{232     \textcolor{comment}{//results array}}
+\DoxyCodeLine{233     QJsonArray jsonArray = jsonObject[\textcolor{stringliteral}{"results"}].toArray()[0].toObject()[\textcolor{stringliteral}{"series"}].toArray();}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} sensor : jsonArray)\{}
+\DoxyCodeLine{236         jsonObject = sensor.toObject();}
+\DoxyCodeLine{237         \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = jsonObject[\textcolor{stringliteral}{"tags"}].toObject()[\textcolor{stringliteral}{"id"}].toString().toInt();}
+\DoxyCodeLine{238         QJsonArray recordsArray = jsonObject[\textcolor{stringliteral}{"values"}].toArray();}
+\DoxyCodeLine{239         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} record : recordsArray)\{}
+\DoxyCodeLine{240             QString time = record.toArray()[0].toString();}
+\DoxyCodeLine{241             \textcolor{keywordtype}{double} val = record.toArray()[1].toDouble();}
+\DoxyCodeLine{242             myfile << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{";"} << time.toStdString() << \textcolor{stringliteral}{";"} << val << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{243         \}}
+\DoxyCodeLine{244     \}}
+\DoxyCodeLine{245     myfile.close();}
+\DoxyCodeLine{246     qDebug() << \textcolor{stringliteral}{"Backup copy created!"};}
+\DoxyCodeLine{247 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_a0ffb12b2e72c2d82bd4048ffa879475d}\label{class_connection_a0ffb12b2e72c2d82bd4048ffa879475d}} 
+\index{Connection@{Connection}!executeQuery@{executeQuery}}
+\index{executeQuery@{executeQuery}!Connection@{Connection}}
+\doxysubsubsection{\texorpdfstring{executeQuery()}{executeQuery()}}
+{\footnotesize\ttfamily Q\+Network\+Reply $\ast$ Connection\+::execute\+Query (\begin{DoxyParamCaption}\item[{Q\+String}]{query }\end{DoxyParamCaption})}
+
+
+
+Execute the query given as String in the parameter and return the request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & The query (select statement) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Request for the database 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file Connection.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65                                                           \{}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     QUrlQuery query;}
+\DoxyCodeLine{68     query.addQueryItem(\textcolor{stringliteral}{"db"}, \textcolor{stringliteral}{"testdb"});}
+\DoxyCodeLine{69     query.addQueryItem(\textcolor{stringliteral}{"q"}, queryString);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     QUrl url(\textcolor{stringliteral}{"http://localhost:8086/query?pretty=true"});}
+\DoxyCodeLine{72     url.setQuery(query);}
+\DoxyCodeLine{73     QNetworkRequest request(url);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{comment}{//manager = new QNetworkAccessManager(this);}}
+\DoxyCodeLine{76     QNetworkReply *reply = manager-\/>get(request);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     QEventLoop loop;}
+\DoxyCodeLine{79     connect(reply, SIGNAL(finished()), \&loop, SLOT(quit()));}
+\DoxyCodeLine{80     loop.exec();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{comment}{//qDebug() << reply-\/>readAll();}}
+\DoxyCodeLine{83     \textcolor{keywordflow}{return} reply;}
+\DoxyCodeLine{84 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_a87000b711b4d87f2c6e114bf2b4a221f}\label{class_connection_a87000b711b4d87f2c6e114bf2b4a221f}} 
+\index{Connection@{Connection}!getAverageWithinTimeRange@{getAverageWithinTimeRange}}
+\index{getAverageWithinTimeRange@{getAverageWithinTimeRange}!Connection@{Connection}}
+\doxysubsubsection{\texorpdfstring{getAverageWithinTimeRange()}{getAverageWithinTimeRange()}}
+{\footnotesize\ttfamily double Connection\+::get\+Average\+Within\+Time\+Range (\begin{DoxyParamCaption}\item[{double}]{lon,  }\item[{double}]{lat,  }\item[{Q\+String}]{time\+From,  }\item[{Q\+String}]{time\+Until,  }\item[{Q\+String}]{measure }\end{DoxyParamCaption})}
+
+
+
+Get average value in the specific point within given timerange. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lon} & Longitude coordinate of the range \\
+\hline
+{\em lat} & Latitude coordinate of the range \\
+\hline
+{\em time\+From} & Start time \\
+\hline
+{\em time\+Until} & End time \\
+\hline
+{\em measure} & P1 or P2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Average value from the specific point and the given timerange 
+\end{DoxyReturn}
+
+
+Definition at line 134 of file Connection.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{135 \{}
+\DoxyCodeLine{136     \textcolor{comment}{//Example: SELECT mean(P2) FROM sensor WHERE lon=9.233 AND lat=50.205 ...}}
+\DoxyCodeLine{137     \textcolor{comment}{//... AND time>=1514761100000000000 AND time<=1514761207000000000 group by id}}
+\DoxyCodeLine{138     \textcolor{comment}{//alternative to timestamp: '2018-\/01-\/01T22:00:00Z'}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140     QString selectStatement = \textcolor{stringliteral}{"SELECT MEAN("};}
+\DoxyCodeLine{141     selectStatement.append(measure);}
+\DoxyCodeLine{142     selectStatement.append(\textcolor{stringliteral}{") FROM sensor WHERE \(\backslash\)"lat\(\backslash\)"="});}
+\DoxyCodeLine{143     selectStatement.append(QString::number(lat));}
+\DoxyCodeLine{144     selectStatement.append(\textcolor{stringliteral}{" AND \(\backslash\)"lon\(\backslash\)"="});}
+\DoxyCodeLine{145     selectStatement.append(QString::number(lon));}
+\DoxyCodeLine{146     selectStatement.append(\textcolor{stringliteral}{" AND time >= '"});}
+\DoxyCodeLine{147     selectStatement.append(timeFrom);}
+\DoxyCodeLine{148     selectStatement.append(\textcolor{stringliteral}{"' AND time <='"});}
+\DoxyCodeLine{149     selectStatement.append(timeUntil);}
+\DoxyCodeLine{150     selectStatement.append(\textcolor{stringliteral}{"' group by id"});}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152     QNetworkReply *reply = this-\/>\mbox{\hyperlink{class_connection_a0ffb12b2e72c2d82bd4048ffa879475d}{executeQuery}}(selectStatement);}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     QString strReply = (QString)reply-\/>readAll();}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156     \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{class_connection_ae11136edc2ae03e914d1ba77379b9293}{getValueFromReply}}(strReply);}
+\DoxyCodeLine{157 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_aebb00b103159d19386596de83860df2c}\label{class_connection_aebb00b103159d19386596de83860df2c}} 
+\index{Connection@{Connection}!getLastValue@{getLastValue}}
+\index{getLastValue@{getLastValue}!Connection@{Connection}}
+\doxysubsubsection{\texorpdfstring{getLastValue()}{getLastValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Connection\+::get\+Last\+Value (\begin{DoxyParamCaption}\item[{double}]{lon,  }\item[{double}]{lat,  }\item[{Q\+String}]{measure }\end{DoxyParamCaption})}
+
+
+
+Method to get last value in the specific point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lon} & Longitude coordinate of the point \\
+\hline
+{\em lat} & Latitude coordinate of the point \\
+\hline
+{\em measure} & P1 or P2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Last value 
+\end{DoxyReturn}
+
+
+Definition at line 99 of file Connection.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{100 \{}
+\DoxyCodeLine{101     \textcolor{comment}{//Select example: SELECT LAST(P1) FROM sensor WHERE "lat"='48.554' AND "lon"='9.294'}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     QString selectStatement = \textcolor{stringliteral}{"SELECT LAST("};}
+\DoxyCodeLine{104     selectStatement.append(measure);}
+\DoxyCodeLine{105     selectStatement.append(\textcolor{stringliteral}{") FROM sensor WHERE \(\backslash\)"lat\(\backslash\)"="});}
+\DoxyCodeLine{106     selectStatement.append(QString::number(lat));}
+\DoxyCodeLine{107     selectStatement.append(\textcolor{stringliteral}{" AND \(\backslash\)"lon\(\backslash\)"="});}
+\DoxyCodeLine{108     selectStatement.append(QString::number(lon));}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     QNetworkReply *reply = this-\/>\mbox{\hyperlink{class_connection_a0ffb12b2e72c2d82bd4048ffa879475d}{executeQuery}}(selectStatement);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     QString strReply = (QString)reply-\/>readAll();}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{class_connection_ae11136edc2ae03e914d1ba77379b9293}{getValueFromReply}}(strReply);}
+\DoxyCodeLine{115 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_afb0c9f7b6b896e0a056b1e2490cac750}\label{class_connection_afb0c9f7b6b896e0a056b1e2490cac750}} 
+\index{Connection@{Connection}!getLastValue@{getLastValue}}
+\index{getLastValue@{getLastValue}!Connection@{Connection}}
+\doxysubsubsection{\texorpdfstring{getLastValue()}{getLastValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double Connection\+::get\+Last\+Value (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{Q\+String}]{measure }\end{DoxyParamCaption})}
+
+
+
+Method to get last P1 value of the sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nr} & \mbox{\hyperlink{class_sensor}{Sensor}} ID \\
+\hline
+{\em measure} & P1 or P2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Last P1 value of the sensor 
+\end{DoxyReturn}
+
+
+Definition at line 117 of file Connection.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{118 \{}
+\DoxyCodeLine{119     \textcolor{comment}{//Select example: SELECT LAST(P1) FROM sensor WHERE "id"='100'}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     QString selectStatement = \textcolor{stringliteral}{"SELECT LAST("};}
+\DoxyCodeLine{122     selectStatement.append(measure);}
+\DoxyCodeLine{123     selectStatement.append(\textcolor{stringliteral}{") FROM sensor WHERE \(\backslash\)"id\(\backslash\)"='"});}
+\DoxyCodeLine{124     selectStatement.append(QString::number(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{125     selectStatement.append(\textcolor{stringliteral}{"'"});}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     QNetworkReply *reply = this-\/>\mbox{\hyperlink{class_connection_a0ffb12b2e72c2d82bd4048ffa879475d}{executeQuery}}(selectStatement);}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     QString strReply = (QString)reply-\/>readAll();}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131     \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{class_connection_ae11136edc2ae03e914d1ba77379b9293}{getValueFromReply}}(strReply);}
+\DoxyCodeLine{132 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_ae11136edc2ae03e914d1ba77379b9293}\label{class_connection_ae11136edc2ae03e914d1ba77379b9293}} 
+\index{Connection@{Connection}!getValueFromReply@{getValueFromReply}}
+\index{getValueFromReply@{getValueFromReply}!Connection@{Connection}}
+\doxysubsubsection{\texorpdfstring{getValueFromReply()}{getValueFromReply()}}
+{\footnotesize\ttfamily double Connection\+::get\+Value\+From\+Reply (\begin{DoxyParamCaption}\item[{Q\+String}]{reply }\end{DoxyParamCaption})}
+
+
+
+Method to unpack reply J\+S\+ON. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reply} & Reply as string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The unpacked value 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file Connection.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{86                                                  \{}
+\DoxyCodeLine{87     \textcolor{comment}{//unpack JSON}}
+\DoxyCodeLine{88     QJsonDocument jsonResponse = QJsonDocument::fromJson(reply.toUtf8());}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{keywordtype}{double} value =}
+\DoxyCodeLine{91             jsonResponse.object()[\textcolor{stringliteral}{"results"}].toArray()[0]}
+\DoxyCodeLine{92             .toObject()[\textcolor{stringliteral}{"series"}].toArray()[0]}
+\DoxyCodeLine{93             .toObject()[\textcolor{stringliteral}{"values"}].toArray()[0]}
+\DoxyCodeLine{94             .toArray()[1].toDouble(); \textcolor{comment}{//jsonArray[0] is the time, jsonArray[1] is the value}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{97 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_adf7b5cf290e8f21fff8504b3ee8b5091}\label{class_connection_adf7b5cf290e8f21fff8504b3ee8b5091}} 
+\index{Connection@{Connection}!postData@{postData}}
+\index{postData@{postData}!Connection@{Connection}}
+\doxysubsubsection{\texorpdfstring{postData()}{postData()}}
+{\footnotesize\ttfamily void Connection\+::post\+Data (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{std\+::string}]{type,  }\item[{double}]{lon,  }\item[{double}]{lat,  }\item[{double}]{first,  }\item[{double}]{second,  }\item[{std\+::string}]{timestamp }\end{DoxyParamCaption})}
+
+
+
+Method to persist data in the DB. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the sensor to be persisted \\
+\hline
+{\em type} & Type of the sensor to be persisted \\
+\hline
+{\em lon} & Longitude coordinate of the sensor to be persisted \\
+\hline
+{\em lat} & Latitude coordinate of the sensor to be persisted \\
+\hline
+{\em first} & P1 if sds sensor, temperature if dht sensor \\
+\hline
+{\em second} & P2 if sds sensor, humidity if dht sensor \\
+\hline
+{\em timestamp} & Date and time of the sensor to be persisted \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file Connection.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25     \textcolor{comment}{//Insert example: INSERT sensor,type=1 lat=2,lon=3,P1=4,P2=5}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     QNetworkRequest request;}
+\DoxyCodeLine{28     request.setUrl(QUrl(\textcolor{stringliteral}{"http://localhost:8086/write?db=testdb"}));}
+\DoxyCodeLine{29     request.setHeader(QNetworkRequest::ContentTypeHeader, \textcolor{stringliteral}{"application/x-\/www-\/form-\/urlencoded"});}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     QString insertStatement = \textcolor{stringliteral}{"sensor,id="};}
+\DoxyCodeLine{32     insertStatement.append(QString::number(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{33     insertStatement.append(\textcolor{stringliteral}{",type="});}
+\DoxyCodeLine{34     insertStatement.append(QString::fromStdString(type));}
+\DoxyCodeLine{35     insertStatement.append(\textcolor{stringliteral}{" lat="});}
+\DoxyCodeLine{36     insertStatement.append(QString::number(lat));}
+\DoxyCodeLine{37     insertStatement.append(\textcolor{stringliteral}{",lon="});}
+\DoxyCodeLine{38     insertStatement.append(QString::number(lon));}
+\DoxyCodeLine{39     \textcolor{keywordflow}{if} ((type == \textcolor{stringliteral}{"SDS011"}) | (type == \textcolor{stringliteral}{"PPD42NS"}))\{}
+\DoxyCodeLine{40         insertStatement.append(\textcolor{stringliteral}{",P1="});}
+\DoxyCodeLine{41         insertStatement.append(QString::number(first));}
+\DoxyCodeLine{42         insertStatement.append(\textcolor{stringliteral}{",P2="});}
+\DoxyCodeLine{43         insertStatement.append(QString::number(second));}
+\DoxyCodeLine{44     \}}
+\DoxyCodeLine{45     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{46         insertStatement.append(\textcolor{stringliteral}{",temperature="});}
+\DoxyCodeLine{47         insertStatement.append(QString::number(first));}
+\DoxyCodeLine{48         insertStatement.append(\textcolor{stringliteral}{",humidity="});}
+\DoxyCodeLine{49         insertStatement.append(QString::number(second));}
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51     insertStatement.append(\textcolor{stringliteral}{" "});}
+\DoxyCodeLine{52     insertStatement.append(QString::fromStdString(timestamp));}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     QByteArray \mbox{\hyperlink{class_connection_adf7b5cf290e8f21fff8504b3ee8b5091}{postData}} = insertStatement.toUtf8();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{comment}{//manager = new QNetworkAccessManager(this);}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     QNetworkReply *reply = manager-\/>post(request, \mbox{\hyperlink{class_connection_adf7b5cf290e8f21fff8504b3ee8b5091}{postData}});}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     QEventLoop loop;}
+\DoxyCodeLine{61     connect(reply, SIGNAL(finished()), \&loop, SLOT(quit()));}
+\DoxyCodeLine{62     loop.exec();}
+\DoxyCodeLine{63 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/ilhajr/\+Desktop/fine-\/dust-\/data-\/visualization/src/\+Fine\+Dust\+Map/Connection.\+h\item 
+/\+Users/ilhajr/\+Desktop/fine-\/dust-\/data-\/visualization/src/\+Fine\+Dust\+Map/Connection.\+cpp\end{DoxyCompactItemize}

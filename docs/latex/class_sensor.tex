@@ -1,0 +1,508 @@
+\hypertarget{class_sensor}{}\doxysection{Sensor Class Reference}
+\label{class_sensor}\index{Sensor@{Sensor}}
+
+
+Class to represent a specific \mbox{\hyperlink{class_sensor}{Sensor}}.  
+
+
+
+
+{\ttfamily \#include $<$Sensor.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sensor_a4426e2d456c0595917593f7a4eb1e70a}{Sensor}} (int p\+\_\+sensor\+\_\+id, string p\+\_\+sensor\+\_\+type, double p\+\_\+latitude, double p\+\_\+longitude)
+\begin{DoxyCompactList}\small\item\em Constructor for the sensor object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sensor_a2f65f2a7aef76663e0646dcabd89e611}{Sensor}} (string file\+Path)
+\begin{DoxyCompactList}\small\item\em Constructor with a given file from which it creates the objects. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sensor_aac33b85e3c7f314ccc39ba5dca349405}{read\+Sensor\+Data}} (string file\+Name)
+\begin{DoxyCompactList}\small\item\em Read \mbox{\hyperlink{class_sensor}{Sensor}} attributes from a C\+S\+V-\/file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sensor_a13d3bdf03c02ad0aa394ea5866af390e}{read\+And\+Export\+Record\+Data}} (string file\+Name)
+\begin{DoxyCompactList}\small\item\em Read all records from C\+SV file and write them into DB. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_sensor_ace7d43e96ad53ea46b219ed471d21844}\label{class_sensor_ace7d43e96ad53ea46b219ed471d21844}} 
+void \mbox{\hyperlink{class_sensor_ace7d43e96ad53ea46b219ed471d21844}{show\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Output of the records of the sensor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_sensor_ade18d4864afd7dfe70692e139898afb4}\label{class_sensor_ade18d4864afd7dfe70692e139898afb4}} 
+void \mbox{\hyperlink{class_sensor_ade18d4864afd7dfe70692e139898afb4}{export\+Data\+To\+Database}} ()
+\begin{DoxyCompactList}\small\item\em Method to write \mbox{\hyperlink{class_sensor}{Sensor}} data in the database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sensor_a7b26d3d483c42312987fa30655374df6}{add\+Record}} (string timestamp, double first\+Value, double second\+Value)
+\begin{DoxyCompactList}\small\item\em Method to add a add new record to the sensor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_sensor_aa8da124df86dd47334a688f063c6a3b2}{data\+As\+String}} ()
+\begin{DoxyCompactList}\small\item\em Method to return sensor as string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_sensor_a5acec410b269bc6ea4960bbd5d45558e}{get\+Sensor\+\_\+id}} () const
+\begin{DoxyCompactList}\small\item\em Method to return the sensor ID. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_a600012c158c7dfaa97919aeb12b759ca}{get\+Last}} (Q\+String measure)
+\begin{DoxyCompactList}\small\item\em Method to get last value of the sensor depending on the given value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_aefd34e0a02fc023a996a0cc6b9b4d88c}{get\+Average}} (Q\+String time\+From, Q\+String time\+Until, Q\+String measure)
+\begin{DoxyCompactList}\small\item\em Method to get the average value of a \mbox{\hyperlink{class_sensor}{Sensor}} in a given period. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sensor_ab178e293d4d0c21cd302777b2f0c4688}{operator==}} (const \mbox{\hyperlink{class_sensor}{Sensor}} \&other) const
+\begin{DoxyCompactList}\small\item\em operator == equal if position+type are the same or if the same id \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_a762f77a4f62b5ee2a94c57aecfc5d32f}{get\+Latitude}} () const
+\begin{DoxyCompactList}\small\item\em Method to get the latitude coordinate of the sensor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_a9a0484056baa8ae0b24ca4cc63d410ca}{get\+Longitude}} () const
+\begin{DoxyCompactList}\small\item\em Method to get the longitude coordinate of the sensor. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_sensor_abbebcc122561ef219cd9983ae9303a11}{get\+Sensor\+\_\+type}} () const
+\begin{DoxyCompactList}\small\item\em Method to get the type of the sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to represent a specific \mbox{\hyperlink{class_sensor}{Sensor}}. 
+
+
+
+Definition at line 18 of file Sensor.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sensor_a4426e2d456c0595917593f7a4eb1e70a}\label{class_sensor_a4426e2d456c0595917593f7a4eb1e70a}} 
+\index{Sensor@{Sensor}!Sensor@{Sensor}}
+\index{Sensor@{Sensor}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{Sensor()}{Sensor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Sensor\+::\+Sensor (\begin{DoxyParamCaption}\item[{int}]{p\+\_\+sensor\+\_\+id,  }\item[{string}]{p\+\_\+sensor\+\_\+type,  }\item[{double}]{p\+\_\+latitude,  }\item[{double}]{p\+\_\+longitude }\end{DoxyParamCaption})}
+
+
+
+Constructor for the sensor object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+sensor\+\_\+id} & Is the sensor ID. \\
+\hline
+{\em p\+\_\+sensor\+\_\+type} & Is the type of the sensor. \\
+\hline
+{\em p\+\_\+latitude} & Is the latitude coordinate of the sensor. \\
+\hline
+{\em p\+\_\+longitude} & Is the longitude coordinate of the sensor. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file Sensor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15                                                                                            \{}
+\DoxyCodeLine{16     this-\/>sensor\_id = p\_sensor\_id;}
+\DoxyCodeLine{17     this-\/>sensor\_type = p\_sensor\_type;}
+\DoxyCodeLine{18     \textcolor{comment}{//this-\/>location = p\_location;}}
+\DoxyCodeLine{19     this-\/>latitude = p\_latitude;}
+\DoxyCodeLine{20     this-\/>longitude = p\_longitude;}
+\DoxyCodeLine{21 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_a2f65f2a7aef76663e0646dcabd89e611}\label{class_sensor_a2f65f2a7aef76663e0646dcabd89e611}} 
+\index{Sensor@{Sensor}!Sensor@{Sensor}}
+\index{Sensor@{Sensor}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{Sensor()}{Sensor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Sensor\+::\+Sensor (\begin{DoxyParamCaption}\item[{string}]{file\+Path }\end{DoxyParamCaption})}
+
+
+
+Constructor with a given file from which it creates the objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Is the path to the file. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file Sensor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23                               \{}
+\DoxyCodeLine{24     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_sensor_aac33b85e3c7f314ccc39ba5dca349405}{readSensorData}}(filePath))\{}
+\DoxyCodeLine{25         \mbox{\hyperlink{class_sensor_a13d3bdf03c02ad0aa394ea5866af390e}{readAndExportRecordData}}(filePath);}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sensor_a7b26d3d483c42312987fa30655374df6}\label{class_sensor_a7b26d3d483c42312987fa30655374df6}} 
+\index{Sensor@{Sensor}!addRecord@{addRecord}}
+\index{addRecord@{addRecord}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{addRecord()}{addRecord()}}
+{\footnotesize\ttfamily void Sensor\+::add\+Record (\begin{DoxyParamCaption}\item[{string}]{timestamp,  }\item[{double}]{first\+Value,  }\item[{double}]{second\+Value }\end{DoxyParamCaption})}
+
+
+
+Method to add a add new record to the sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timestamp} & Time of the record \\
+\hline
+{\em first\+Value} & P1 or temperature (put -\/1 when second\+Value only) \\
+\hline
+{\em second\+Value} & P2 or humidity (put -\/1 when first\+Value only) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 167 of file Sensor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{167                                                                              \{}
+\DoxyCodeLine{168     \textcolor{comment}{//If firstValue==-\/1 only secondValue has to be set}}
+\DoxyCodeLine{169     \textcolor{keywordflow}{if} (firstValue == -\/1)\{}
+\DoxyCodeLine{170         records.find(timestamp)-\/>setSecondValue(secondValue);}
+\DoxyCodeLine{171     \}}
+\DoxyCodeLine{172     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{173         \mbox{\hyperlink{class_record}{Record}} rec(timestamp, firstValue, secondValue);}
+\DoxyCodeLine{174         records.insert(timestamp, rec);}
+\DoxyCodeLine{175     \}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_aa8da124df86dd47334a688f063c6a3b2}\label{class_sensor_aa8da124df86dd47334a688f063c6a3b2}} 
+\index{Sensor@{Sensor}!dataAsString@{dataAsString}}
+\index{dataAsString@{dataAsString}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{dataAsString()}{dataAsString()}}
+{\footnotesize\ttfamily std\+::string Sensor\+::data\+As\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method to return sensor as string. 
+
+\begin{DoxyReturn}{Returns}
+One string with the data of the sensor, separated by \textquotesingle{};\textquotesingle{} 
+\end{DoxyReturn}
+
+
+Definition at line 179 of file Sensor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{179                               \{}
+\DoxyCodeLine{180     \textcolor{keywordflow}{return} to\_string(sensor\_id)+\textcolor{stringliteral}{";"}+sensor\_type+\textcolor{stringliteral}{";"}+to\_string(latitude)+\textcolor{stringliteral}{";"}+to\_string(longitude);}
+\DoxyCodeLine{181 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_aefd34e0a02fc023a996a0cc6b9b4d88c}\label{class_sensor_aefd34e0a02fc023a996a0cc6b9b4d88c}} 
+\index{Sensor@{Sensor}!getAverage@{getAverage}}
+\index{getAverage@{getAverage}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{getAverage()}{getAverage()}}
+{\footnotesize\ttfamily double Sensor\+::get\+Average (\begin{DoxyParamCaption}\item[{Q\+String}]{time\+From,  }\item[{Q\+String}]{time\+Until,  }\item[{Q\+String}]{measure }\end{DoxyParamCaption})}
+
+
+
+Method to get the average value of a \mbox{\hyperlink{class_sensor}{Sensor}} in a given period. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+From} & Start time of the period \\
+\hline
+{\em time\+Until} & End time of the period \\
+\hline
+{\em measure} & \char`\"{}\+P1\char`\"{} or \char`\"{}\+P2\char`\"{}, \char`\"{}temperature\char`\"{} or \char`\"{}humidity\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The average value, but return -\/9999 when not valid parameters 
+\end{DoxyReturn}
+
+
+Definition at line 191 of file Sensor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{191                                                                              \{}
+\DoxyCodeLine{192     \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{193     \textcolor{keywordtype}{double} sum = 0;}
+\DoxyCodeLine{194     \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_record}{Record}} r : records)\{}
+\DoxyCodeLine{195         \textcolor{keywordflow}{if} (r.getTimestamp()>=timeFrom.toStdString() \&\& r.getTimestamp()<=timeUntil.toStdString())\{}
+\DoxyCodeLine{196             count++;}
+\DoxyCodeLine{197             \textcolor{keywordflow}{if} (measure == \textcolor{stringliteral}{"P1"} || measure == \textcolor{stringliteral}{"temperature"} ) sum += r.getFirst();}
+\DoxyCodeLine{198             \textcolor{keywordflow}{else} sum += r.getSecond();}
+\DoxyCodeLine{199         \}}
+\DoxyCodeLine{200     \}}
+\DoxyCodeLine{201     \textcolor{keywordflow}{if} (0 == count) \textcolor{keywordflow}{return} -\/9999;}
+\DoxyCodeLine{202     \textcolor{keywordflow}{return} sum/count;}
+\DoxyCodeLine{203 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_a600012c158c7dfaa97919aeb12b759ca}\label{class_sensor_a600012c158c7dfaa97919aeb12b759ca}} 
+\index{Sensor@{Sensor}!getLast@{getLast}}
+\index{getLast@{getLast}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{getLast()}{getLast()}}
+{\footnotesize\ttfamily double Sensor\+::get\+Last (\begin{DoxyParamCaption}\item[{Q\+String}]{measure }\end{DoxyParamCaption})}
+
+
+
+Method to get last value of the sensor depending on the given value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em measure} & \char`\"{}\+P1\char`\"{} or \char`\"{}\+P2\char`\"{} or \char`\"{}temperature\char`\"{} or \char`\"{}humidity\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Last value of the sensor. 
+\end{DoxyReturn}
+
+
+Definition at line 183 of file Sensor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{183                                      \{}
+\DoxyCodeLine{184     \textcolor{keywordflow}{if} (measure == \textcolor{stringliteral}{"P1"} || measure == \textcolor{stringliteral}{"temperature"} )\{}
+\DoxyCodeLine{185         \textcolor{keywordflow}{return} records.last().getFirst();}
+\DoxyCodeLine{186     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{187         \textcolor{keywordflow}{return} records.last().getSecond();}
+\DoxyCodeLine{188     \}}
+\DoxyCodeLine{189 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_a762f77a4f62b5ee2a94c57aecfc5d32f}\label{class_sensor_a762f77a4f62b5ee2a94c57aecfc5d32f}} 
+\index{Sensor@{Sensor}!getLatitude@{getLatitude}}
+\index{getLatitude@{getLatitude}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{getLatitude()}{getLatitude()}}
+{\footnotesize\ttfamily double Sensor\+::get\+Latitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method to get the latitude coordinate of the sensor. 
+
+\begin{DoxyReturn}{Returns}
+the latitude coordinate of the sensor 
+\end{DoxyReturn}
+
+
+Definition at line 34 of file Sensor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36     \textcolor{keywordflow}{return} latitude;}
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_a9a0484056baa8ae0b24ca4cc63d410ca}\label{class_sensor_a9a0484056baa8ae0b24ca4cc63d410ca}} 
+\index{Sensor@{Sensor}!getLongitude@{getLongitude}}
+\index{getLongitude@{getLongitude}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{getLongitude()}{getLongitude()}}
+{\footnotesize\ttfamily double Sensor\+::get\+Longitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method to get the longitude coordinate of the sensor. 
+
+\begin{DoxyReturn}{Returns}
+the longitude coordinate of the sensor. 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file Sensor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41     \textcolor{keywordflow}{return} longitude;}
+\DoxyCodeLine{42 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_a5acec410b269bc6ea4960bbd5d45558e}\label{class_sensor_a5acec410b269bc6ea4960bbd5d45558e}} 
+\index{Sensor@{Sensor}!getSensor\_id@{getSensor\_id}}
+\index{getSensor\_id@{getSensor\_id}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{getSensor\_id()}{getSensor\_id()}}
+{\footnotesize\ttfamily int Sensor\+::get\+Sensor\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method to return the sensor ID. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sensor}{Sensor}} ID 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file Sensor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31     \textcolor{keywordflow}{return} sensor\_id;}
+\DoxyCodeLine{32 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_abbebcc122561ef219cd9983ae9303a11}\label{class_sensor_abbebcc122561ef219cd9983ae9303a11}} 
+\index{Sensor@{Sensor}!getSensor\_type@{getSensor\_type}}
+\index{getSensor\_type@{getSensor\_type}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{getSensor\_type()}{getSensor\_type()}}
+{\footnotesize\ttfamily string Sensor\+::get\+Sensor\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method to get the type of the sensor. 
+
+\begin{DoxyReturn}{Returns}
+the sensor type. 
+\end{DoxyReturn}
+
+
+Definition at line 44 of file Sensor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46     \textcolor{keywordflow}{return} sensor\_type;}
+\DoxyCodeLine{47 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_ab178e293d4d0c21cd302777b2f0c4688}\label{class_sensor_ab178e293d4d0c21cd302777b2f0c4688}} 
+\index{Sensor@{Sensor}!operator==@{operator==}}
+\index{operator==@{operator==}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Sensor\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sensor}{Sensor}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+operator == equal if position+type are the same or if the same id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Second sensor to be compared with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if equal, otherwise return false 
+\end{DoxyReturn}
+
+
+Definition at line 205 of file Sensor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{205                                                 \{}
+\DoxyCodeLine{206     \textcolor{keywordflow}{if} (this-\/>latitude == other.latitude}
+\DoxyCodeLine{207             \&\& this-\/>longitude == other.longitude}
+\DoxyCodeLine{208             \&\& this-\/>sensor\_type == other.sensor\_type)\{}
+\DoxyCodeLine{209         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{210     \}}
+\DoxyCodeLine{211     \textcolor{keywordflow}{if} (this-\/>sensor\_id == other.sensor\_id)}
+\DoxyCodeLine{212         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{213     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{214 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_a13d3bdf03c02ad0aa394ea5866af390e}\label{class_sensor_a13d3bdf03c02ad0aa394ea5866af390e}} 
+\index{Sensor@{Sensor}!readAndExportRecordData@{readAndExportRecordData}}
+\index{readAndExportRecordData@{readAndExportRecordData}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{readAndExportRecordData()}{readAndExportRecordData()}}
+{\footnotesize\ttfamily void Sensor\+::read\+And\+Export\+Record\+Data (\begin{DoxyParamCaption}\item[{string}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Read all records from C\+SV file and write them into DB. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filanem} & Is the path to the file. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 119 of file Sensor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{119                                                     \{}
+\DoxyCodeLine{120     ifstream fin;}
+\DoxyCodeLine{121     \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{122     \textcolor{comment}{// Open an existing file}}
+\DoxyCodeLine{123     fin.open(fileName, ifstream::in);}
+\DoxyCodeLine{124     getline(fin, line); \textcolor{comment}{//ignore first line}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     \mbox{\hyperlink{class_connection}{Connection}} c;}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     qDebug() << \textcolor{stringliteral}{"STARTED writing data into DB"};}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     \textcolor{keywordflow}{while} (getline(fin, line)) \{}
+\DoxyCodeLine{131         vector<string> raw = splitRawString(line, \textcolor{charliteral}{';'});}
+\DoxyCodeLine{132         \textcolor{keywordtype}{string} timestamp = this-\/>reformatTime(raw[5]);}
+\DoxyCodeLine{133         \textcolor{keywordflow}{if} (sensor\_type == \textcolor{stringliteral}{"SDS011"} || sensor\_type == \textcolor{stringliteral}{"PPD42NS"}) \{}
+\DoxyCodeLine{134             \textcolor{keywordtype}{double} p\_p1 = std::stod(raw[6]);}
+\DoxyCodeLine{135             \textcolor{keywordtype}{double} p\_p2 = std::stod(raw[9]);}
+\DoxyCodeLine{136             c.\mbox{\hyperlink{class_connection_adf7b5cf290e8f21fff8504b3ee8b5091}{postData}}(this-\/>sensor\_id, this-\/>sensor\_type,}
+\DoxyCodeLine{137                        this-\/>longitude, this-\/>latitude, p\_p1, p\_p2, timestamp);}
+\DoxyCodeLine{138         \}}
+\DoxyCodeLine{139         \textcolor{keywordflow}{else} \{ \textcolor{comment}{//DHT22}}
+\DoxyCodeLine{140             \textcolor{keywordtype}{double} temerature = std::stod(raw[6]);}
+\DoxyCodeLine{141             \textcolor{keywordtype}{double} humidity = std::stod(raw[7]);}
+\DoxyCodeLine{142             c.\mbox{\hyperlink{class_connection_adf7b5cf290e8f21fff8504b3ee8b5091}{postData}}(this-\/>sensor\_id, this-\/>sensor\_type,}
+\DoxyCodeLine{143                        this-\/>longitude, this-\/>latitude, temerature, humidity, timestamp);}
+\DoxyCodeLine{144         \}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146     \}}
+\DoxyCodeLine{147     fin.close();}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     qDebug() << \textcolor{stringliteral}{"STOPPED writing data into DB"};}
+\DoxyCodeLine{150 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sensor_aac33b85e3c7f314ccc39ba5dca349405}\label{class_sensor_aac33b85e3c7f314ccc39ba5dca349405}} 
+\index{Sensor@{Sensor}!readSensorData@{readSensorData}}
+\index{readSensorData@{readSensorData}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{readSensorData()}{readSensorData()}}
+{\footnotesize\ttfamily bool Sensor\+::read\+Sensor\+Data (\begin{DoxyParamCaption}\item[{string}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Read \mbox{\hyperlink{class_sensor}{Sensor}} attributes from a C\+S\+V-\/file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Is the path to the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if data ok, false if wrong sensortype or wrong area 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file Sensor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92                                            \{}
+\DoxyCodeLine{93     ifstream fin;}
+\DoxyCodeLine{94     \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{95     \textcolor{comment}{// Open an existing file}}
+\DoxyCodeLine{96     fin.open(fileName, ifstream::in);}
+\DoxyCodeLine{97     getline(fin, line); \textcolor{comment}{//ignore first line}}
+\DoxyCodeLine{98     getline(fin, line); \textcolor{comment}{//get first line}}
+\DoxyCodeLine{99     vector<string> raw = this-\/>splitRawString(line, \textcolor{charliteral}{';'});}
+\DoxyCodeLine{100     this-\/>sensor\_id = std::stoi(raw[0]);}
+\DoxyCodeLine{101     this-\/>sensor\_type = raw[1];}
+\DoxyCodeLine{102     \textcolor{comment}{//this-\/>location = std::stoi(raw[2]);}}
+\DoxyCodeLine{103     this-\/>latitude = std::stod(raw[3]);}
+\DoxyCodeLine{104     this-\/>longitude = std::stod(raw[4]);}
+\DoxyCodeLine{105     fin.close();}
+\DoxyCodeLine{106     \textcolor{comment}{/*if (!(checkIfPointInDarmstadtArea(latitude, longitude)))\{}}
+\DoxyCodeLine{107 \textcolor{comment}{        //remove(fileName.c\_str()); //delete file from directory}}
+\DoxyCodeLine{108 \textcolor{comment}{        qDebug() << "Ignore file. Wrong area";}}
+\DoxyCodeLine{109 \textcolor{comment}{        return false;}}
+\DoxyCodeLine{110 \textcolor{comment}{    \}*/}}
+\DoxyCodeLine{111     \textcolor{keywordflow}{if} (sensor\_type != \textcolor{stringliteral}{"DHT22"} \&\& sensor\_type != \textcolor{stringliteral}{"SDS011"} \&\& sensor\_type != \textcolor{stringliteral}{"PPD42NS"})\{}
+\DoxyCodeLine{112         \textcolor{comment}{//remove(fileName.c\_str()); //delete file from directory}}
+\DoxyCodeLine{113         qDebug() << \textcolor{stringliteral}{"Ignore file. Wrong sensor"};}
+\DoxyCodeLine{114         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{115     \}}
+\DoxyCodeLine{116     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{117 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/ilhajr/\+Desktop/fine-\/dust-\/data-\/visualization/src/\+Fine\+Dust\+Map/Sensor.\+h\item 
+/\+Users/ilhajr/\+Desktop/fine-\/dust-\/data-\/visualization/src/\+Fine\+Dust\+Map/Sensor.\+cpp\end{DoxyCompactItemize}

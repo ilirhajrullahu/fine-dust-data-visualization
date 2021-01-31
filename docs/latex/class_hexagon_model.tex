@@ -1,0 +1,957 @@
+\hypertarget{class_hexagon_model}{}\doxysection{Hexagon\+Model Class Reference}
+\label{class_hexagon_model}\index{HexagonModel@{HexagonModel}}
+
+
+Class to represent a \mbox{\hyperlink{class_hexagon}{Hexagon}} and help for the drawing of the \mbox{\hyperlink{class_hexagon}{Hexagon}}.  
+
+
+
+
+{\ttfamily \#include $<$Hexagon\+Model.\+h$>$}
+
+Inheritance diagram for Hexagon\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_hexagon_model}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_hexagon_model_a5f7ad2ea14377e7758eaa397a8aa7a84}\label{class_hexagon_model_a5f7ad2ea14377e7758eaa397a8aa7a84}} 
+enum \mbox{\hyperlink{class_hexagon_model_a5f7ad2ea14377e7758eaa397a8aa7a84}{Hexagon\+Roles}} \{ \newline
+{\bfseries x0} = Qt\+::User\+Role + 1, 
+{\bfseries x1}, 
+{\bfseries x2}, 
+{\bfseries x3}, 
+\newline
+{\bfseries x4}, 
+{\bfseries x5}, 
+{\bfseries y0}, 
+{\bfseries y1}, 
+\newline
+{\bfseries y2}, 
+{\bfseries y3}, 
+{\bfseries y4}, 
+{\bfseries y5}, 
+\newline
+{\bfseries tile\+Color}, 
+{\bfseries tile\+Opacity}, 
+{\bfseries value\+Temp}, 
+{\bfseries value\+Pm25}, 
+\newline
+{\bfseries value\+Pm10}, 
+{\bfseries value\+Humidity}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum that contains all roles used by the model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexagon_model_a012ced8fa06590bc887d570f7eab93e7}{Hexagon\+Model}} (Q\+Object $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Constructs an abstract list model with the given parent. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hexagon_model_aa190bfaaff6d585fb62e3d8561df6b49}{Hexagon\+Model}} (\mbox{\hyperlink{class_sensor_manager}{Sensor\+Manager}} $\ast$sensor\+Manager)
+\begin{DoxyCompactList}\small\item\em Constructs an abstract list model with a reference to the \mbox{\hyperlink{class_sensor_manager}{Sensor\+Manager}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hexagon_model_a9f45bf7d9d36ee97f5bdce595dd94404}{add\+Hexagon}} (const \mbox{\hyperlink{class_hexagon}{Hexagon}} \&hexagon)
+\begin{DoxyCompactList}\small\item\em Adds a new hexagon to the model. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_hexagon_model_a0ac810d5bc412f297c54f97b5f9739a7}\label{class_hexagon_model_a0ac810d5bc412f297c54f97b5f9739a7}} 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE void \mbox{\hyperlink{class_hexagon_model_a0ac810d5bc412f297c54f97b5f9739a7}{remove\+Hexagons}} ()
+\begin{DoxyCompactList}\small\item\em Remove all hexagons from the model. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_hexagon_model_a52a4cb3f6586ac0eae7a4e492251e4d1}{row\+Count}} (const Q\+Model\+Index \&parent=Q\+Model\+Index()) const
+\begin{DoxyCompactList}\small\item\em Returns the number of rows under the given parent. \end{DoxyCompactList}\item 
+Q\+Variant \mbox{\hyperlink{class_hexagon_model_aed7abb3790fc19974016e70aaffbdf48}{data}} (const Q\+Model\+Index \&index, int role=Qt\+::\+Display\+Role) const
+\begin{DoxyCompactList}\small\item\em Returns the data stored under the given role for the item referred to by the index. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+Color \mbox{\hyperlink{class_hexagon_model_a76a193b38ab700544ec0d4fcbf29636b}{get\+Temp\+Tile\+Color}} (double)
+\begin{DoxyCompactList}\small\item\em Matches the measured temperature value to the corresponding color from the legend. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+Color \mbox{\hyperlink{class_hexagon_model_acfb5c6e5208320529bea2bf44636d4ee}{get\+Pm25\+Tile\+Color}} (double)
+\begin{DoxyCompactList}\small\item\em Matches the measured Pm25 value to the corresponding color from the legend. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+Color \mbox{\hyperlink{class_hexagon_model_a6df1833fd34a26cbdc934d2d145069b5}{get\+Pm10\+Tile\+Color}} (double)
+\begin{DoxyCompactList}\small\item\em Matches the measured Pm10 value to the corresponding color from the legend. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+Color \mbox{\hyperlink{class_hexagon_model_aaf04a78980dedb99042537871fcd09f2}{get\+Humidity\+Tile\+Color}} (double)
+\begin{DoxyCompactList}\small\item\em Matches the measured humidity value to the corresponding color from the legend. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE void \mbox{\hyperlink{class_hexagon_model_a7f3695bd99bbbb2b78bbdc83ecc69518}{current\+Zoom\+Level}} (Q\+Variant \mbox{\hyperlink{class_hexagon_model_a5c10f22f7b6dea508d20a820d6e27ae3}{zoom\+Level}})
+\begin{DoxyCompactList}\small\item\em set zoom\+Level \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE void \mbox{\hyperlink{class_hexagon_model_a321871952790deee168264bc733ccaae}{zoom\+Level\+B\+T0}} (\mbox{\hyperlink{class_hexagon_model}{Hexagon\+Model}} \&model, Q\+Qml\+Context $\ast$ctxt)
+\begin{DoxyCompactList}\small\item\em Model for zoomlevel between 0 and 7. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE void \mbox{\hyperlink{class_hexagon_model_ab5e54948b1a003bd4588bfa122e95be6}{zoom\+Level\+B\+T7}} (\mbox{\hyperlink{class_hexagon_model}{Hexagon\+Model}} \&model, Q\+Qml\+Context $\ast$ctxt)
+\begin{DoxyCompactList}\small\item\em Model for zoomlevel between 7 and 9. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE void \mbox{\hyperlink{class_hexagon_model_af441e1c04ac7390a5661c3485c87bc3a}{zoom\+Level\+B\+T9}} (\mbox{\hyperlink{class_hexagon_model}{Hexagon\+Model}} \&model, Q\+Qml\+Context $\ast$ctxt)
+\begin{DoxyCompactList}\small\item\em Model for zoomlevel between 9 and 10. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE void \mbox{\hyperlink{class_hexagon_model_ad176c4c6a72be57d819254ffce3d5cce}{zoom\+Level\+B\+T10}} (\mbox{\hyperlink{class_hexagon_model}{Hexagon\+Model}} \&model, Q\+Qml\+Context $\ast$ctxt)
+\begin{DoxyCompactList}\small\item\em Model for zoomlevel between 10 and 12. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE void \mbox{\hyperlink{class_hexagon_model_aa34b79457ff46969a566c6a776480b62}{zoom\+Level\+B\+T12}} (\mbox{\hyperlink{class_hexagon_model}{Hexagon\+Model}} \&model, Q\+Qml\+Context $\ast$ctxt)
+\begin{DoxyCompactList}\small\item\em Model for zoomlevel bigger then 12. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_hexagon_model_a5c10f22f7b6dea508d20a820d6e27ae3}\label{class_hexagon_model_a5c10f22f7b6dea508d20a820d6e27ae3}} 
+double \mbox{\hyperlink{class_hexagon_model_a5c10f22f7b6dea508d20a820d6e27ae3}{zoom\+Level}}
+\begin{DoxyCompactList}\small\item\em Current zoomlevel of the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Hash$<$ int, Q\+Byte\+Array $>$ \mbox{\hyperlink{class_hexagon_model_a6ddd7b7e193cf8a16ba30fd7c997f39a}{role\+Names}} () const
+\begin{DoxyCompactList}\small\item\em Returns the model\textquotesingle{}s role names. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to represent a \mbox{\hyperlink{class_hexagon}{Hexagon}} and help for the drawing of the \mbox{\hyperlink{class_hexagon}{Hexagon}}. 
+
+Definition at line 18 of file Hexagon\+Model.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexagon_model_a012ced8fa06590bc887d570f7eab93e7}\label{class_hexagon_model_a012ced8fa06590bc887d570f7eab93e7}} 
+\index{HexagonModel@{HexagonModel}!HexagonModel@{HexagonModel}}
+\index{HexagonModel@{HexagonModel}!HexagonModel@{HexagonModel}}
+\doxysubsubsection{\texorpdfstring{HexagonModel()}{HexagonModel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Hexagon\+Model\+::\+Hexagon\+Model (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructs an abstract list model with the given parent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & given parent \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3 of file Hexagon\+Model.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4     : QAbstractListModel(parent)}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{comment}{//    this-\/>zoomLevelBT0();}}
+\DoxyCodeLine{7 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_hexagon_model_aa190bfaaff6d585fb62e3d8561df6b49}\label{class_hexagon_model_aa190bfaaff6d585fb62e3d8561df6b49}} 
+\index{HexagonModel@{HexagonModel}!HexagonModel@{HexagonModel}}
+\index{HexagonModel@{HexagonModel}!HexagonModel@{HexagonModel}}
+\doxysubsubsection{\texorpdfstring{HexagonModel()}{HexagonModel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Hexagon\+Model\+::\+Hexagon\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sensor_manager}{Sensor\+Manager}} $\ast$}]{sensor\+Manager }\end{DoxyParamCaption})}
+
+
+
+Constructs an abstract list model with a reference to the \mbox{\hyperlink{class_sensor_manager}{Sensor\+Manager}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor\+Manager} & \mbox{\hyperlink{class_sensor_manager}{Sensor\+Manager}} with sensor data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 9 of file Hexagon\+Model.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9                                                        \{}
+\DoxyCodeLine{10     sm = sensorManager;}
+\DoxyCodeLine{11 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexagon_model_a9f45bf7d9d36ee97f5bdce595dd94404}\label{class_hexagon_model_a9f45bf7d9d36ee97f5bdce595dd94404}} 
+\index{HexagonModel@{HexagonModel}!addHexagon@{addHexagon}}
+\index{addHexagon@{addHexagon}!HexagonModel@{HexagonModel}}
+\doxysubsubsection{\texorpdfstring{addHexagon()}{addHexagon()}}
+{\footnotesize\ttfamily void Hexagon\+Model\+::add\+Hexagon (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexagon}{Hexagon}} \&}]{hexagon }\end{DoxyParamCaption})}
+
+
+
+Adds a new hexagon to the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hexagon} & Create a new hexagon and use it as argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 13 of file Hexagon\+Model.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     beginInsertRows(QModelIndex(), \mbox{\hyperlink{class_hexagon_model_a52a4cb3f6586ac0eae7a4e492251e4d1}{rowCount}}(), \mbox{\hyperlink{class_hexagon_model_a52a4cb3f6586ac0eae7a4e492251e4d1}{rowCount}}());}
+\DoxyCodeLine{16     m\_hexagons << hexagon;}
+\DoxyCodeLine{17     endInsertRows();}
+\DoxyCodeLine{18 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_hexagon_model_a7f3695bd99bbbb2b78bbdc83ecc69518}\label{class_hexagon_model_a7f3695bd99bbbb2b78bbdc83ecc69518}} 
+\index{HexagonModel@{HexagonModel}!currentZoomLevel@{currentZoomLevel}}
+\index{currentZoomLevel@{currentZoomLevel}!HexagonModel@{HexagonModel}}
+\doxysubsubsection{\texorpdfstring{currentZoomLevel()}{currentZoomLevel()}}
+{\footnotesize\ttfamily void Hexagon\+Model\+::current\+Zoom\+Level (\begin{DoxyParamCaption}\item[{Q\+Variant}]{zoom\+Level }\end{DoxyParamCaption})}
+
+
+
+set zoom\+Level 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zoom\+Level} & new zoom\+Level \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 180 of file Hexagon\+Model.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{181 \{}
+\DoxyCodeLine{182     this-\/>\mbox{\hyperlink{class_hexagon_model_a5c10f22f7b6dea508d20a820d6e27ae3}{zoomLevel}} = \mbox{\hyperlink{class_hexagon_model_a5c10f22f7b6dea508d20a820d6e27ae3}{zoomLevel}}.toDouble();}
+\DoxyCodeLine{183     std::cout << this-\/>\mbox{\hyperlink{class_hexagon_model_a5c10f22f7b6dea508d20a820d6e27ae3}{zoomLevel}} << std::endl;}
+\DoxyCodeLine{184 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_hexagon_model_aed7abb3790fc19974016e70aaffbdf48}\label{class_hexagon_model_aed7abb3790fc19974016e70aaffbdf48}} 
+\index{HexagonModel@{HexagonModel}!data@{data}}
+\index{data@{data}!HexagonModel@{HexagonModel}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily Q\+Variant Hexagon\+Model\+::data (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index,  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption}) const}
+
+
+
+Returns the data stored under the given role for the item referred to by the index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & index of the item \\
+\hline
+{\em role} & role of the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+stored data 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file Hexagon\+Model.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35     \textcolor{keywordflow}{if} (index.row() < 0 || index.row() >= m\_hexagons.count())}
+\DoxyCodeLine{36         \textcolor{keywordflow}{return} QVariant();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keyword}{const} \mbox{\hyperlink{class_hexagon}{Hexagon}} \&hexagon = m\_hexagons[index.row()];}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keywordflow}{switch}(role) \{}
+\DoxyCodeLine{41     \textcolor{keywordflow}{case} x0:}
+\DoxyCodeLine{42         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_a0576acdc1be3e972c7aca5142169990a}{getX0}}();}
+\DoxyCodeLine{43         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{44     \textcolor{keywordflow}{case} x1:}
+\DoxyCodeLine{45         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_af0f2d1dd1c5b3872f232b93f59ac72d8}{getX1}}();}
+\DoxyCodeLine{46         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{47     \textcolor{keywordflow}{case} x2:}
+\DoxyCodeLine{48         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_a6f52f621a76e3ab9a864fba8893d2165}{getX2}}();}
+\DoxyCodeLine{49         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{50     \textcolor{keywordflow}{case} x3:}
+\DoxyCodeLine{51         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_a139f957f036fd7fb5be6966462fff6a8}{getX3}}();}
+\DoxyCodeLine{52         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{53     \textcolor{keywordflow}{case} x4:}
+\DoxyCodeLine{54         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_ad0731740f2d773543bac610aa5cb9177}{getX4}}();}
+\DoxyCodeLine{55         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{56     \textcolor{keywordflow}{case} x5:}
+\DoxyCodeLine{57         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_abdba82e1896d9d7dc366f3c549f91648}{getX5}}();}
+\DoxyCodeLine{58         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{59     \textcolor{keywordflow}{case} y0:}
+\DoxyCodeLine{60         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_a7ba794478fadd2834bbb775df86b212e}{getY0}}();}
+\DoxyCodeLine{61         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{62     \textcolor{keywordflow}{case} y1:}
+\DoxyCodeLine{63         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_a21c3619eca7432f9430a70cdbd0e87f2}{getY1}}();}
+\DoxyCodeLine{64         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{65     \textcolor{keywordflow}{case} y2:}
+\DoxyCodeLine{66         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_ab12f58dbb878621f16a5573043b5839e}{getY2}}();}
+\DoxyCodeLine{67         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{68     \textcolor{keywordflow}{case} y3:}
+\DoxyCodeLine{69         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_a1b42a99d689772e213c45d55c8f0863a}{getY3}}();}
+\DoxyCodeLine{70         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{71     \textcolor{keywordflow}{case} y4:}
+\DoxyCodeLine{72         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_af968313dab0744045044cea509e899e5}{getY4}}();}
+\DoxyCodeLine{73         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{74     \textcolor{keywordflow}{case} y5:}
+\DoxyCodeLine{75         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_aaa9de087e3c3449f689cce903f5ea22d}{getY5}}();}
+\DoxyCodeLine{76         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{77     \textcolor{keywordflow}{case} tileColor:}
+\DoxyCodeLine{78         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_af67073018edbf44376d0c4051bda0041}{getColor}}();}
+\DoxyCodeLine{79         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{80     \textcolor{keywordflow}{case} tileOpacity:}
+\DoxyCodeLine{81         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_a4a4f81949de20fd3e12a24e3a11d154d}{getOpacity}}();}
+\DoxyCodeLine{82         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{83     \textcolor{keywordflow}{case} valueTemp:}
+\DoxyCodeLine{84         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_a0fcfa52480e43f7c29e950c12f866efb}{getValueTemp}}();}
+\DoxyCodeLine{85         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{86     \textcolor{keywordflow}{case} valuePm25:}
+\DoxyCodeLine{87         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_a5bcde104cfc11185e3f94764a3e9e6a4}{getValuePm25}}();}
+\DoxyCodeLine{88         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{89     \textcolor{keywordflow}{case} valuePm10:}
+\DoxyCodeLine{90         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_a5387fe17383b173063449378f03067eb}{getValuePm10}}();}
+\DoxyCodeLine{91         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{92     \textcolor{keywordflow}{case} valueHumidity:}
+\DoxyCodeLine{93         \textcolor{keywordflow}{return} hexagon.\mbox{\hyperlink{class_hexagon_af04df792faa8c9473a6fd09ebe444750}{getValueHumidity}}();}
+\DoxyCodeLine{94         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{95     \}}
+\DoxyCodeLine{96     \textcolor{keywordflow}{return} QVariant();}
+\DoxyCodeLine{97 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_hexagon_model_aaf04a78980dedb99042537871fcd09f2}\label{class_hexagon_model_aaf04a78980dedb99042537871fcd09f2}} 
+\index{HexagonModel@{HexagonModel}!getHumidityTileColor@{getHumidityTileColor}}
+\index{getHumidityTileColor@{getHumidityTileColor}!HexagonModel@{HexagonModel}}
+\doxysubsubsection{\texorpdfstring{getHumidityTileColor()}{getHumidityTileColor()}}
+{\footnotesize\ttfamily Q\+Color Hexagon\+Model\+::get\+Humidity\+Tile\+Color (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+Matches the measured humidity value to the corresponding color from the legend. 
+
+If the parameter is -\/9999 the color \#00F\+F\+F\+F\+FF is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em humidity} & measurement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+corresponding color for the measurement 
+\end{DoxyReturn}
+
+
+Definition at line 154 of file Hexagon\+Model.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{155 \{}
+\DoxyCodeLine{156     \textcolor{keywordflow}{if} (value == -\/9999) \{}
+\DoxyCodeLine{157         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"\#00FFFFFF"};}
+\DoxyCodeLine{158     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value <= 20) \{}
+\DoxyCodeLine{159         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"red"};}
+\DoxyCodeLine{160     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value > 20 \&\& value <= 40) \{}
+\DoxyCodeLine{161         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"orange"};}
+\DoxyCodeLine{162     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value > 40 \&\& value <= 55) \{}
+\DoxyCodeLine{163         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"yellow"};}
+\DoxyCodeLine{164     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value > 55 \&\& value <= 80) \{}
+\DoxyCodeLine{165         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"green"};}
+\DoxyCodeLine{166     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value > 80 \&\& value <= 95) \{}
+\DoxyCodeLine{167         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"cyan"};}
+\DoxyCodeLine{168     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value > 95) \{}
+\DoxyCodeLine{169         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"blue"};}
+\DoxyCodeLine{170     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{171         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"\#00FFFFFF"};}
+\DoxyCodeLine{172     \}}
+\DoxyCodeLine{173 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_hexagon_model_a6df1833fd34a26cbdc934d2d145069b5}\label{class_hexagon_model_a6df1833fd34a26cbdc934d2d145069b5}} 
+\index{HexagonModel@{HexagonModel}!getPm10TileColor@{getPm10TileColor}}
+\index{getPm10TileColor@{getPm10TileColor}!HexagonModel@{HexagonModel}}
+\doxysubsubsection{\texorpdfstring{getPm10TileColor()}{getPm10TileColor()}}
+{\footnotesize\ttfamily Q\+Color Hexagon\+Model\+::get\+Pm10\+Tile\+Color (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+Matches the measured Pm10 value to the corresponding color from the legend. 
+
+If the parameter is -\/9999 the color \#00F\+F\+F\+F\+FF is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Pm10} & measurement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+corresponding color for the measurement 
+\end{DoxyReturn}
+
+
+Definition at line 137 of file Hexagon\+Model.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{138 \{}
+\DoxyCodeLine{139     \textcolor{keywordflow}{if} (value == -\/9999) \{}
+\DoxyCodeLine{140         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"\#00FFFFFF"};}
+\DoxyCodeLine{141     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value <= 25) \{}
+\DoxyCodeLine{142         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"\#0a635d"};}
+\DoxyCodeLine{143     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value > 25 \&\& value <= 50) \{}
+\DoxyCodeLine{144         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"orange"};}
+\DoxyCodeLine{145     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value > 50 \&\& value <= 150) \{}
+\DoxyCodeLine{146         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"red"};}
+\DoxyCodeLine{147     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value > 150) \{}
+\DoxyCodeLine{148         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"purple"};}
+\DoxyCodeLine{149     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{150         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"\#00FFFFFF"};}
+\DoxyCodeLine{151     \}}
+\DoxyCodeLine{152 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_hexagon_model_acfb5c6e5208320529bea2bf44636d4ee}\label{class_hexagon_model_acfb5c6e5208320529bea2bf44636d4ee}} 
+\index{HexagonModel@{HexagonModel}!getPm25TileColor@{getPm25TileColor}}
+\index{getPm25TileColor@{getPm25TileColor}!HexagonModel@{HexagonModel}}
+\doxysubsubsection{\texorpdfstring{getPm25TileColor()}{getPm25TileColor()}}
+{\footnotesize\ttfamily Q\+Color Hexagon\+Model\+::get\+Pm25\+Tile\+Color (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+Matches the measured Pm25 value to the corresponding color from the legend. 
+
+If the parameter is -\/9999 the color \#00F\+F\+F\+F\+FF is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Pm25} & measurement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+corresponding color for the measurement 
+\end{DoxyReturn}
+
+
+Definition at line 120 of file Hexagon\+Model.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{121 \{}
+\DoxyCodeLine{122     \textcolor{keywordflow}{if} (value == -\/9999) \{}
+\DoxyCodeLine{123         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"\#00FFFFFF"};}
+\DoxyCodeLine{124     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value <= 20) \{}
+\DoxyCodeLine{125         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"\#0a635d"};}
+\DoxyCodeLine{126     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value > 20 \&\& value <= 40) \{}
+\DoxyCodeLine{127         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"orange"};}
+\DoxyCodeLine{128     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value > 40 \&\& value <= 90) \{}
+\DoxyCodeLine{129         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"red"};}
+\DoxyCodeLine{130     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value > 90) \{}
+\DoxyCodeLine{131         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"purple"};}
+\DoxyCodeLine{132     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{133         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"\#00FFFFFF"};}
+\DoxyCodeLine{134     \}}
+\DoxyCodeLine{135 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_hexagon_model_a76a193b38ab700544ec0d4fcbf29636b}\label{class_hexagon_model_a76a193b38ab700544ec0d4fcbf29636b}} 
+\index{HexagonModel@{HexagonModel}!getTempTileColor@{getTempTileColor}}
+\index{getTempTileColor@{getTempTileColor}!HexagonModel@{HexagonModel}}
+\doxysubsubsection{\texorpdfstring{getTempTileColor()}{getTempTileColor()}}
+{\footnotesize\ttfamily Q\+Color Hexagon\+Model\+::get\+Temp\+Tile\+Color (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+Matches the measured temperature value to the corresponding color from the legend. 
+
+If the parameter is -\/9999 the color \#00F\+F\+F\+F\+FF is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em temperature} & measurement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+corresponding color for the measurement 
+\end{DoxyReturn}
+
+
+Definition at line 99 of file Hexagon\+Model.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{100 \{}
+\DoxyCodeLine{101     \textcolor{keywordflow}{if} (value == -\/9999) \{}
+\DoxyCodeLine{102         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"\#00FFFFFF"};}
+\DoxyCodeLine{103     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value <= -\/5) \{}
+\DoxyCodeLine{104         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"blue"};}
+\DoxyCodeLine{105     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value > -\/5 \&\& value <= 5) \{}
+\DoxyCodeLine{106         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"cyan"};}
+\DoxyCodeLine{107     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value > 5 \&\& value <= 15) \{}
+\DoxyCodeLine{108         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"green"};}
+\DoxyCodeLine{109     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value > 15 \&\& value <= 25) \{}
+\DoxyCodeLine{110         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"yellow"};}
+\DoxyCodeLine{111     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value > 25 \&\& value <= 35) \{}
+\DoxyCodeLine{112         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"orange"};}
+\DoxyCodeLine{113     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(value > 35) \{}
+\DoxyCodeLine{114         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"red"};}
+\DoxyCodeLine{115     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{116         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"\#00FFFFFF"};}
+\DoxyCodeLine{117     \}}
+\DoxyCodeLine{118 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_hexagon_model_a6ddd7b7e193cf8a16ba30fd7c997f39a}\label{class_hexagon_model_a6ddd7b7e193cf8a16ba30fd7c997f39a}} 
+\index{HexagonModel@{HexagonModel}!roleNames@{roleNames}}
+\index{roleNames@{roleNames}!HexagonModel@{HexagonModel}}
+\doxysubsubsection{\texorpdfstring{roleNames()}{roleNames()}}
+{\footnotesize\ttfamily Q\+Hash$<$ int, Q\+Byte\+Array $>$ Hexagon\+Model\+::role\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Returns the model\textquotesingle{}s role names. 
+
+\begin{DoxyReturn}{Returns}
+Returns the model\textquotesingle{}s role names. 
+\end{DoxyReturn}
+
+
+Definition at line 452 of file Hexagon\+Model.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{452                                                      \{}
+\DoxyCodeLine{453     QHash<int, QByteArray> roles;}
+\DoxyCodeLine{454     roles[x0] = \textcolor{stringliteral}{"x0"};}
+\DoxyCodeLine{455     roles[x1] = \textcolor{stringliteral}{"x1"};}
+\DoxyCodeLine{456     roles[x2] = \textcolor{stringliteral}{"x2"};}
+\DoxyCodeLine{457     roles[x3] = \textcolor{stringliteral}{"x3"};}
+\DoxyCodeLine{458     roles[x4] = \textcolor{stringliteral}{"x4"};}
+\DoxyCodeLine{459     roles[x5] = \textcolor{stringliteral}{"x5"};}
+\DoxyCodeLine{460     roles[y0] = \textcolor{stringliteral}{"y0"};}
+\DoxyCodeLine{461     roles[y1] = \textcolor{stringliteral}{"y1"};}
+\DoxyCodeLine{462     roles[y2] = \textcolor{stringliteral}{"y2"};}
+\DoxyCodeLine{463     roles[y3] = \textcolor{stringliteral}{"y3"};}
+\DoxyCodeLine{464     roles[y4] = \textcolor{stringliteral}{"y4"};}
+\DoxyCodeLine{465     roles[y5] = \textcolor{stringliteral}{"y5"};}
+\DoxyCodeLine{466     roles[tileColor] = \textcolor{stringliteral}{"tileColor"};}
+\DoxyCodeLine{467     roles[tileOpacity] = \textcolor{stringliteral}{"tileOpacity"};}
+\DoxyCodeLine{468     roles[valueTemp] = \textcolor{stringliteral}{"valueTemp"};}
+\DoxyCodeLine{469     roles[valuePm25] = \textcolor{stringliteral}{"valuePm25"};}
+\DoxyCodeLine{470     roles[valuePm10] = \textcolor{stringliteral}{"valuePm10"};}
+\DoxyCodeLine{471     roles[valueHumidity] = \textcolor{stringliteral}{"valueHumidity"};}
+\DoxyCodeLine{472 }
+\DoxyCodeLine{473     \textcolor{keywordflow}{return} roles;}
+\DoxyCodeLine{474 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_hexagon_model_a52a4cb3f6586ac0eae7a4e492251e4d1}\label{class_hexagon_model_a52a4cb3f6586ac0eae7a4e492251e4d1}} 
+\index{HexagonModel@{HexagonModel}!rowCount@{rowCount}}
+\index{rowCount@{rowCount}!HexagonModel@{HexagonModel}}
+\doxysubsubsection{\texorpdfstring{rowCount()}{rowCount()}}
+{\footnotesize\ttfamily int Hexagon\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of rows under the given parent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & given parent \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of children of parend 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file Hexagon\+Model.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29     Q\_UNUSED(parent);}
+\DoxyCodeLine{30     \textcolor{keywordflow}{return} m\_hexagons.count();}
+\DoxyCodeLine{31 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_hexagon_model_a321871952790deee168264bc733ccaae}\label{class_hexagon_model_a321871952790deee168264bc733ccaae}} 
+\index{HexagonModel@{HexagonModel}!zoomLevelBT0@{zoomLevelBT0}}
+\index{zoomLevelBT0@{zoomLevelBT0}!HexagonModel@{HexagonModel}}
+\doxysubsubsection{\texorpdfstring{zoomLevelBT0()}{zoomLevelBT0()}}
+{\footnotesize\ttfamily void Hexagon\+Model\+::zoom\+Level\+B\+T0 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexagon_model}{Hexagon\+Model}} \&}]{model,  }\item[{Q\+Qml\+Context $\ast$}]{ctxt }\end{DoxyParamCaption})}
+
+
+
+Model for zoomlevel between 0 and 7. 
+
+Creates the model with all the hexagons for a zoomlevel between 0 and 7.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Model from \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}} \\
+\hline
+{\em ctxt} & Q\+Qml\+Context from \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 186 of file Hexagon\+Model.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{187 \{}
+\DoxyCodeLine{188     std::cout << \textcolor{stringliteral}{"ZoomLevelBT0 wird geladen!"} << std::endl;}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190     \mbox{\hyperlink{class_hexagon}{Hexagon}} hexagon;}
+\DoxyCodeLine{191     \textcolor{keywordtype}{double} columncounter = 0;}
+\DoxyCodeLine{192     \textcolor{keywordtype}{double} rowcounter = 0;}
+\DoxyCodeLine{193     \textcolor{keywordtype}{bool} gate = \textcolor{keyword}{false};}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195     \textcolor{comment}{//die punkte als arrays}}
+\DoxyCodeLine{196     \textcolor{keywordtype}{double} newX[6];}
+\DoxyCodeLine{197     \textcolor{keywordtype}{double} newY[6];}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199     \textcolor{comment}{//das hexagon von dem alle anderen abgeleitet werden}}
+\DoxyCodeLine{200     \mbox{\hyperlink{class_hexagon}{Hexagon}} *startHex = \textcolor{keyword}{new} \mbox{\hyperlink{class_hexagon}{Hexagon}}(5.565, 6.065, 6.065, 5.565, 5.065, 5.065,}
+\DoxyCodeLine{201                                     47.115, 47.365, 47.615, 47.865, 47.615, 47.365, \textcolor{stringliteral}{"red"}, 0, 0, 0, 0, 0);}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203     \textcolor{comment}{//SensorManager sm;}}
+\DoxyCodeLine{204     \textcolor{keywordtype}{double} tempVal, pm25Val, pm10Val, humidityVal;}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<16; i++)}
+\DoxyCodeLine{207     \{}
+\DoxyCodeLine{208         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<10; j++)}
+\DoxyCodeLine{209         \{}
+\DoxyCodeLine{210             \textcolor{comment}{//newX/newY -\/> neue koordinaten für das nächste hexagon in der schleife -\/> wird aus dem starthexagon + counter berechnet}}
+\DoxyCodeLine{211             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<6; k++)}
+\DoxyCodeLine{212             \{}
+\DoxyCodeLine{213                 newX[k] = startHex-\/>\mbox{\hyperlink{class_hexagon_a1e6d92b8d92e984f18848b6da656491a}{getAllCoords}}(\textcolor{stringliteral}{"x"}, k) + columncounter;}
+\DoxyCodeLine{214                 newY[k] = startHex-\/>\mbox{\hyperlink{class_hexagon_a1e6d92b8d92e984f18848b6da656491a}{getAllCoords}}(\textcolor{stringliteral}{"y"}, k) + rowcounter;}
+\DoxyCodeLine{215             \}}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217             tempVal = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"temperature"});}
+\DoxyCodeLine{218             pm25Val = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"P1"});}
+\DoxyCodeLine{219             pm10Val = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"P2"});}
+\DoxyCodeLine{220             humidityVal = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"humidity"});}
+\DoxyCodeLine{221             \textcolor{keywordflow}{if}(!(tempVal == -\/9999 \&\& pm25Val == -\/9999 \&\& pm10Val == -\/9999 \&\& humidityVal == -\/9999))\{}
+\DoxyCodeLine{222                 model.\mbox{\hyperlink{class_hexagon_model_a9f45bf7d9d36ee97f5bdce595dd94404}{addHexagon}}(\mbox{\hyperlink{class_hexagon}{Hexagon}}(newX[0], newX[1], newX[2], newX[3], newX[4], newX[5],      \textcolor{comment}{//x0... -\/> longi}}
+\DoxyCodeLine{223                         newY[0], newY[1], newY[2], newY[3], newY[4], newY[5],      \textcolor{comment}{//y0... -\/> lati}}
+\DoxyCodeLine{224                         model.\mbox{\hyperlink{class_hexagon_model_acfb5c6e5208320529bea2bf44636d4ee}{getPm25TileColor}}(pm25Val), 0.6, tempVal, pm25Val, pm10Val, humidityVal));  \textcolor{comment}{//Farbe des Hexagon, opacity, temp, pm25, pm10}}
+\DoxyCodeLine{225             \}}
+\DoxyCodeLine{226             columncounter = columncounter + 1;}
+\DoxyCodeLine{227         \}}
+\DoxyCodeLine{228         \textcolor{keywordflow}{if}(gate == \textcolor{keyword}{false})\{}
+\DoxyCodeLine{229             columncounter = 0.5;}
+\DoxyCodeLine{230             gate = \textcolor{keyword}{true};}
+\DoxyCodeLine{231         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{232             columncounter = 0;}
+\DoxyCodeLine{233             gate = \textcolor{keyword}{false};}
+\DoxyCodeLine{234         \}}
+\DoxyCodeLine{235         rowcounter = rowcounter + 0.5;}
+\DoxyCodeLine{236     \}}
+\DoxyCodeLine{237     ctxt-\/>setContextProperty(\textcolor{stringliteral}{"modelBT0"}, \&model);}
+\DoxyCodeLine{238 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_hexagon_model_ad176c4c6a72be57d819254ffce3d5cce}\label{class_hexagon_model_ad176c4c6a72be57d819254ffce3d5cce}} 
+\index{HexagonModel@{HexagonModel}!zoomLevelBT10@{zoomLevelBT10}}
+\index{zoomLevelBT10@{zoomLevelBT10}!HexagonModel@{HexagonModel}}
+\doxysubsubsection{\texorpdfstring{zoomLevelBT10()}{zoomLevelBT10()}}
+{\footnotesize\ttfamily void Hexagon\+Model\+::zoom\+Level\+B\+T10 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexagon_model}{Hexagon\+Model}} \&}]{model,  }\item[{Q\+Qml\+Context $\ast$}]{ctxt }\end{DoxyParamCaption})}
+
+
+
+Model for zoomlevel between 10 and 12. 
+
+Creates the model with all the hexagons for a zoomlevel between 10 and 12.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Model from \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}} \\
+\hline
+{\em ctxt} & Q\+Qml\+Context from \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 346 of file Hexagon\+Model.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{347 \{}
+\DoxyCodeLine{348     std::cout << \textcolor{stringliteral}{"ZoomLevelBT10 wird geladen!"} << std::endl;}
+\DoxyCodeLine{349 }
+\DoxyCodeLine{350     \mbox{\hyperlink{class_hexagon}{Hexagon}} hexagon;}
+\DoxyCodeLine{351     \textcolor{keywordtype}{double} columncounter = 0;}
+\DoxyCodeLine{352     \textcolor{keywordtype}{double} rowcounter = 0;}
+\DoxyCodeLine{353     \textcolor{keywordtype}{bool} gate = \textcolor{keyword}{false};}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355     \textcolor{comment}{//die punkte als arrays}}
+\DoxyCodeLine{356     \textcolor{keywordtype}{double} newX[6];}
+\DoxyCodeLine{357     \textcolor{keywordtype}{double} newY[6];}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359     \textcolor{comment}{//das hexagon von dem alle anderen abgeleitet werden}}
+\DoxyCodeLine{360     \mbox{\hyperlink{class_hexagon}{Hexagon}} *startHex = \textcolor{keyword}{new} \mbox{\hyperlink{class_hexagon}{Hexagon}}(5.565, 5.615, 5.615, 5.565 , 5.515 ,5.515 ,}
+\DoxyCodeLine{361                                     47.115,47.140 , 47.165 ,47.19 ,47.165 , 47.140, \textcolor{stringliteral}{"red"}, 0, 0, 0, 0, 0);}
+\DoxyCodeLine{362 }
+\DoxyCodeLine{363     \textcolor{keywordtype}{double} tempVal, pm25Val, pm10Val, humidityVal;}
+\DoxyCodeLine{364 }
+\DoxyCodeLine{365     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<156; i++)}
+\DoxyCodeLine{366     \{}
+\DoxyCodeLine{367         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<96; j++)}
+\DoxyCodeLine{368         \{}
+\DoxyCodeLine{369             \textcolor{comment}{//newX/newY -\/> neue koordinaten für das nächste hexagon in der schleife -\/> wird aus dem starthexagon + counter berechnet}}
+\DoxyCodeLine{370             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<6; k++)}
+\DoxyCodeLine{371             \{}
+\DoxyCodeLine{372                 newX[k] = startHex-\/>\mbox{\hyperlink{class_hexagon_a1e6d92b8d92e984f18848b6da656491a}{getAllCoords}}(\textcolor{stringliteral}{"x"}, k) + columncounter;}
+\DoxyCodeLine{373                 newY[k] = startHex-\/>\mbox{\hyperlink{class_hexagon_a1e6d92b8d92e984f18848b6da656491a}{getAllCoords}}(\textcolor{stringliteral}{"y"}, k) + rowcounter;}
+\DoxyCodeLine{374             \}}
+\DoxyCodeLine{375 }
+\DoxyCodeLine{376             tempVal = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"temperature"});}
+\DoxyCodeLine{377             pm25Val = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"P1"});}
+\DoxyCodeLine{378             pm10Val = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"P2"});}
+\DoxyCodeLine{379             humidityVal = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"humidity"});}
+\DoxyCodeLine{380             \textcolor{keywordflow}{if}(!(tempVal == -\/9999 \&\& pm25Val == -\/9999 \&\& pm10Val == -\/9999 \&\& humidityVal == -\/9999))\{}
+\DoxyCodeLine{381                 model.\mbox{\hyperlink{class_hexagon_model_a9f45bf7d9d36ee97f5bdce595dd94404}{addHexagon}}(\mbox{\hyperlink{class_hexagon}{Hexagon}}(newX[0], newX[1], newX[2], newX[3], newX[4], newX[5],      \textcolor{comment}{//x0... -\/> longi}}
+\DoxyCodeLine{382                         newY[0], newY[1], newY[2], newY[3], newY[4], newY[5],      \textcolor{comment}{//y0... -\/> lati}}
+\DoxyCodeLine{383                         model.\mbox{\hyperlink{class_hexagon_model_acfb5c6e5208320529bea2bf44636d4ee}{getPm25TileColor}}(pm25Val), 0.6, tempVal, pm25Val, pm10Val, humidityVal));  \textcolor{comment}{//Farbe des Hexagon, opacity, temp, pm25, pm10}}
+\DoxyCodeLine{384             \}}
+\DoxyCodeLine{385             columncounter = columncounter + 0.1;}
+\DoxyCodeLine{386         \}}
+\DoxyCodeLine{387         \textcolor{keywordflow}{if}(gate == \textcolor{keyword}{false})\{}
+\DoxyCodeLine{388             columncounter = 0.05;}
+\DoxyCodeLine{389             gate = \textcolor{keyword}{true};}
+\DoxyCodeLine{390         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{391             columncounter = 0;}
+\DoxyCodeLine{392             gate = \textcolor{keyword}{false};}
+\DoxyCodeLine{393         \}}
+\DoxyCodeLine{394         rowcounter = rowcounter + 0.05;}
+\DoxyCodeLine{395     \}}
+\DoxyCodeLine{396     ctxt-\/>setContextProperty(\textcolor{stringliteral}{"modelBT10"}, \&model);}
+\DoxyCodeLine{397 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_hexagon_model_aa34b79457ff46969a566c6a776480b62}\label{class_hexagon_model_aa34b79457ff46969a566c6a776480b62}} 
+\index{HexagonModel@{HexagonModel}!zoomLevelBT12@{zoomLevelBT12}}
+\index{zoomLevelBT12@{zoomLevelBT12}!HexagonModel@{HexagonModel}}
+\doxysubsubsection{\texorpdfstring{zoomLevelBT12()}{zoomLevelBT12()}}
+{\footnotesize\ttfamily void Hexagon\+Model\+::zoom\+Level\+B\+T12 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexagon_model}{Hexagon\+Model}} \&}]{model,  }\item[{Q\+Qml\+Context $\ast$}]{ctxt }\end{DoxyParamCaption})}
+
+
+
+Model for zoomlevel bigger then 12. 
+
+Creates the model with all the hexagons for a zoomlevel bigger then 12.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Model from \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}} \\
+\hline
+{\em ctxt} & Q\+Qml\+Context from \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 399 of file Hexagon\+Model.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{400 \{}
+\DoxyCodeLine{401     std::cout << \textcolor{stringliteral}{"ZoomLevelBT12 wird geladen!"} << std::endl;}
+\DoxyCodeLine{402 }
+\DoxyCodeLine{403     \mbox{\hyperlink{class_hexagon}{Hexagon}} hexagon;}
+\DoxyCodeLine{404     \textcolor{keywordtype}{double} columncounter = 0;}
+\DoxyCodeLine{405     \textcolor{keywordtype}{double} rowcounter = 0;}
+\DoxyCodeLine{406     \textcolor{keywordtype}{bool} gate = \textcolor{keyword}{false};}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408     \textcolor{comment}{//die punkte als arrays}}
+\DoxyCodeLine{409     \textcolor{keywordtype}{double} newX[6];}
+\DoxyCodeLine{410     \textcolor{keywordtype}{double} newY[6];}
+\DoxyCodeLine{411 }
+\DoxyCodeLine{412     \textcolor{comment}{//das hexagon von dem alle anderen abgeleitet werden}}
+\DoxyCodeLine{413     \mbox{\hyperlink{class_hexagon}{Hexagon}} *startHex = \textcolor{keyword}{new} \mbox{\hyperlink{class_hexagon}{Hexagon}}(5.565, 5.59, 5.59, 5.565 , 5.54 ,5.54 ,}
+\DoxyCodeLine{414                                     47.115,47.1275 , 47.14 ,47.1525 ,47.14 , 47.1275, \textcolor{stringliteral}{"red"}, 0, 0, 0, 0, 0);}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416     \textcolor{keywordtype}{double} tempVal, pm25Val, pm10Val, humidityVal;}
+\DoxyCodeLine{417 }
+\DoxyCodeLine{418     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<312; i++)}
+\DoxyCodeLine{419     \{}
+\DoxyCodeLine{420         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<192; j++)}
+\DoxyCodeLine{421         \{}
+\DoxyCodeLine{422             \textcolor{comment}{//newX/newY -\/> neue koordinaten für das nächste hexagon in der schleife -\/> wird aus dem starthexagon + counter berechnet}}
+\DoxyCodeLine{423             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<6; k++)}
+\DoxyCodeLine{424             \{}
+\DoxyCodeLine{425                 newX[k] = startHex-\/>\mbox{\hyperlink{class_hexagon_a1e6d92b8d92e984f18848b6da656491a}{getAllCoords}}(\textcolor{stringliteral}{"x"}, k) + columncounter;}
+\DoxyCodeLine{426                 newY[k] = startHex-\/>\mbox{\hyperlink{class_hexagon_a1e6d92b8d92e984f18848b6da656491a}{getAllCoords}}(\textcolor{stringliteral}{"y"}, k) + rowcounter;}
+\DoxyCodeLine{427             \}}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{429             tempVal = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"temperature"});}
+\DoxyCodeLine{430             pm25Val = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"P1"});}
+\DoxyCodeLine{431             pm10Val = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"P2"});}
+\DoxyCodeLine{432             humidityVal = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"humidity"});}
+\DoxyCodeLine{433             \textcolor{keywordflow}{if}(!(tempVal == -\/9999 \&\& pm25Val == -\/9999 \&\& pm10Val == -\/9999 \&\& humidityVal == -\/9999))\{}
+\DoxyCodeLine{434                 model.\mbox{\hyperlink{class_hexagon_model_a9f45bf7d9d36ee97f5bdce595dd94404}{addHexagon}}(\mbox{\hyperlink{class_hexagon}{Hexagon}}(newX[0], newX[1], newX[2], newX[3], newX[4], newX[5],      \textcolor{comment}{//x0... -\/> longi}}
+\DoxyCodeLine{435                         newY[0], newY[1], newY[2], newY[3], newY[4], newY[5],      \textcolor{comment}{//y0... -\/> lati}}
+\DoxyCodeLine{436                         model.\mbox{\hyperlink{class_hexagon_model_acfb5c6e5208320529bea2bf44636d4ee}{getPm25TileColor}}(pm25Val), 0.6, tempVal, pm25Val, pm10Val, humidityVal));  \textcolor{comment}{//Farbe des Hexagon, opacity, temp, pm25, pm10}}
+\DoxyCodeLine{437             \}}
+\DoxyCodeLine{438             columncounter = columncounter + 0.05;}
+\DoxyCodeLine{439         \}}
+\DoxyCodeLine{440         \textcolor{keywordflow}{if}(gate == \textcolor{keyword}{false})\{}
+\DoxyCodeLine{441             columncounter = 0.025;}
+\DoxyCodeLine{442             gate = \textcolor{keyword}{true};}
+\DoxyCodeLine{443         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{444             columncounter = 0;}
+\DoxyCodeLine{445             gate = \textcolor{keyword}{false};}
+\DoxyCodeLine{446         \}}
+\DoxyCodeLine{447         rowcounter = rowcounter + 0.025;}
+\DoxyCodeLine{448     \}}
+\DoxyCodeLine{449     ctxt-\/>setContextProperty(\textcolor{stringliteral}{"modelBT12"}, \&model);}
+\DoxyCodeLine{450 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_hexagon_model_ab5e54948b1a003bd4588bfa122e95be6}\label{class_hexagon_model_ab5e54948b1a003bd4588bfa122e95be6}} 
+\index{HexagonModel@{HexagonModel}!zoomLevelBT7@{zoomLevelBT7}}
+\index{zoomLevelBT7@{zoomLevelBT7}!HexagonModel@{HexagonModel}}
+\doxysubsubsection{\texorpdfstring{zoomLevelBT7()}{zoomLevelBT7()}}
+{\footnotesize\ttfamily void Hexagon\+Model\+::zoom\+Level\+B\+T7 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexagon_model}{Hexagon\+Model}} \&}]{model,  }\item[{Q\+Qml\+Context $\ast$}]{ctxt }\end{DoxyParamCaption})}
+
+
+
+Model for zoomlevel between 7 and 9. 
+
+Creates the model with all the hexagons for a zoomlevel between 7 and 9.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Model from \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}} \\
+\hline
+{\em ctxt} & Q\+Qml\+Context from \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 240 of file Hexagon\+Model.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{241 \{}
+\DoxyCodeLine{242     std::cout << \textcolor{stringliteral}{"ZoomLevelBT6 wird geladen!"} << std::endl;}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244     \mbox{\hyperlink{class_hexagon}{Hexagon}} hexagon;}
+\DoxyCodeLine{245     \textcolor{keywordtype}{double} columncounter = 0;}
+\DoxyCodeLine{246     \textcolor{keywordtype}{double} rowcounter = 0;}
+\DoxyCodeLine{247     \textcolor{keywordtype}{bool} gate = \textcolor{keyword}{false};}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249     \textcolor{comment}{//die punkte als arrays}}
+\DoxyCodeLine{250     \textcolor{keywordtype}{double} newX[6];}
+\DoxyCodeLine{251     \textcolor{keywordtype}{double} newY[6];}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253     \textcolor{comment}{//das hexagon von dem alle anderen abgeleitet werden}}
+\DoxyCodeLine{254     \mbox{\hyperlink{class_hexagon}{Hexagon}} *startHex = \textcolor{keyword}{new} \mbox{\hyperlink{class_hexagon}{Hexagon}}(5.565, 5.865, 5.865, 5.565, 5.265, 5.265,}
+\DoxyCodeLine{255                                     47.115, 47.265, 47.415, 47.565, 47.415, 47.265, \textcolor{stringliteral}{"red"}, 0, 0, 0, 0, 0);}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257     \textcolor{keywordtype}{double} tempVal, pm25Val, pm10Val, humidityVal;}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<27; i++)}
+\DoxyCodeLine{260     \{}
+\DoxyCodeLine{261         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<17; j++)}
+\DoxyCodeLine{262         \{}
+\DoxyCodeLine{263             \textcolor{comment}{//newX/newY -\/> neue koordinaten für das nächste hexagon in der schleife -\/> wird aus dem starthexagon + counter berechnet}}
+\DoxyCodeLine{264             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<6; k++)}
+\DoxyCodeLine{265             \{}
+\DoxyCodeLine{266                 newX[k] = startHex-\/>\mbox{\hyperlink{class_hexagon_a1e6d92b8d92e984f18848b6da656491a}{getAllCoords}}(\textcolor{stringliteral}{"x"}, k) + columncounter;}
+\DoxyCodeLine{267                 newY[k] = startHex-\/>\mbox{\hyperlink{class_hexagon_a1e6d92b8d92e984f18848b6da656491a}{getAllCoords}}(\textcolor{stringliteral}{"y"}, k) + rowcounter;}
+\DoxyCodeLine{268             \}}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270             tempVal = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"temperature"});}
+\DoxyCodeLine{271             pm25Val = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"P1"});}
+\DoxyCodeLine{272             pm10Val = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"P2"});}
+\DoxyCodeLine{273             humidityVal = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"humidity"});}
+\DoxyCodeLine{274             \textcolor{keywordflow}{if}(!(tempVal == -\/9999 \&\& pm25Val == -\/9999 \&\& pm10Val == -\/9999 \&\& humidityVal == -\/9999))\{}
+\DoxyCodeLine{275                 model.\mbox{\hyperlink{class_hexagon_model_a9f45bf7d9d36ee97f5bdce595dd94404}{addHexagon}}(\mbox{\hyperlink{class_hexagon}{Hexagon}}(newX[0], newX[1], newX[2], newX[3], newX[4], newX[5],      \textcolor{comment}{//x0... -\/> longi}}
+\DoxyCodeLine{276                         newY[0], newY[1], newY[2], newY[3], newY[4], newY[5],      \textcolor{comment}{//y0... -\/> lati}}
+\DoxyCodeLine{277                         model.\mbox{\hyperlink{class_hexagon_model_acfb5c6e5208320529bea2bf44636d4ee}{getPm25TileColor}}(pm25Val), 0.6, tempVal, pm25Val, pm10Val, humidityVal));  \textcolor{comment}{//Farbe des Hexagon, opacity, temp, pm25, pm10}}
+\DoxyCodeLine{278             \}}
+\DoxyCodeLine{279             columncounter = columncounter + 0.6;}
+\DoxyCodeLine{280         \}}
+\DoxyCodeLine{281         \textcolor{keywordflow}{if}(gate == \textcolor{keyword}{false})\{}
+\DoxyCodeLine{282             columncounter = 0.3;}
+\DoxyCodeLine{283             gate = \textcolor{keyword}{true};}
+\DoxyCodeLine{284         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{285             columncounter = 0;}
+\DoxyCodeLine{286             gate = \textcolor{keyword}{false};}
+\DoxyCodeLine{287         \}}
+\DoxyCodeLine{288         rowcounter = rowcounter + 0.3;}
+\DoxyCodeLine{289     \}}
+\DoxyCodeLine{290     ctxt-\/>setContextProperty(\textcolor{stringliteral}{"modelBT7"}, \&model);}
+\DoxyCodeLine{291 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_hexagon_model_af441e1c04ac7390a5661c3485c87bc3a}\label{class_hexagon_model_af441e1c04ac7390a5661c3485c87bc3a}} 
+\index{HexagonModel@{HexagonModel}!zoomLevelBT9@{zoomLevelBT9}}
+\index{zoomLevelBT9@{zoomLevelBT9}!HexagonModel@{HexagonModel}}
+\doxysubsubsection{\texorpdfstring{zoomLevelBT9()}{zoomLevelBT9()}}
+{\footnotesize\ttfamily void Hexagon\+Model\+::zoom\+Level\+B\+T9 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexagon_model}{Hexagon\+Model}} \&}]{model,  }\item[{Q\+Qml\+Context $\ast$}]{ctxt }\end{DoxyParamCaption})}
+
+
+
+Model for zoomlevel between 9 and 10. 
+
+Creates the model with all the hexagons for a zoomlevel between 9 and 10.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Model from \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}} \\
+\hline
+{\em ctxt} & Q\+Qml\+Context from \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 293 of file Hexagon\+Model.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{294 \{}
+\DoxyCodeLine{295     std::cout << \textcolor{stringliteral}{"ZoomLevelBT9 wird geladen!"} << std::endl;}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297     \mbox{\hyperlink{class_hexagon}{Hexagon}} hexagon;}
+\DoxyCodeLine{298     \textcolor{keywordtype}{double} columncounter = 0;}
+\DoxyCodeLine{299     \textcolor{keywordtype}{double} rowcounter = 0;}
+\DoxyCodeLine{300     \textcolor{keywordtype}{bool} gate = \textcolor{keyword}{false};}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302     \textcolor{comment}{//die punkte als arrays}}
+\DoxyCodeLine{303     \textcolor{keywordtype}{double} newX[6];}
+\DoxyCodeLine{304     \textcolor{keywordtype}{double} newY[6];}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306     \textcolor{comment}{//das hexagon von dem alle anderen abgeleitet werden}}
+\DoxyCodeLine{307     \mbox{\hyperlink{class_hexagon}{Hexagon}} *startHex = \textcolor{keyword}{new} \mbox{\hyperlink{class_hexagon}{Hexagon}}(5.565, 5.765, 5.765, 5.565, 5.365, 5.365,}
+\DoxyCodeLine{308                                     47.115, 47.215, 47.315, 47.415, 47.315, 47.215, \textcolor{stringliteral}{"red"}, 0, 0, 0, 0, 0);}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{310     \textcolor{keywordtype}{double} tempVal, pm25Val, pm10Val, humidityVal;}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<41; i++)}
+\DoxyCodeLine{313     \{}
+\DoxyCodeLine{314         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<25; j++)}
+\DoxyCodeLine{315         \{}
+\DoxyCodeLine{316             \textcolor{comment}{//newX/newY -\/> neue koordinaten für das nächste hexagon in der schleife -\/> wird aus dem starthexagon + counter berechnet}}
+\DoxyCodeLine{317             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<6; k++)}
+\DoxyCodeLine{318             \{}
+\DoxyCodeLine{319                 newX[k] = startHex-\/>\mbox{\hyperlink{class_hexagon_a1e6d92b8d92e984f18848b6da656491a}{getAllCoords}}(\textcolor{stringliteral}{"x"}, k) + columncounter;}
+\DoxyCodeLine{320                 newY[k] = startHex-\/>\mbox{\hyperlink{class_hexagon_a1e6d92b8d92e984f18848b6da656491a}{getAllCoords}}(\textcolor{stringliteral}{"y"}, k) + rowcounter;}
+\DoxyCodeLine{321             \}}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323             tempVal = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"temperature"});}
+\DoxyCodeLine{324             pm25Val = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"P1"});}
+\DoxyCodeLine{325             pm10Val = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"P2"});}
+\DoxyCodeLine{326             humidityVal = sm-\/>\mbox{\hyperlink{class_sensor_manager_a8aac36b5c3042d5d98ff520824c7d911}{getAveragePolygonValue}}(newY, newX, \textcolor{stringliteral}{"humidity"});}
+\DoxyCodeLine{327             \textcolor{keywordflow}{if}(!(tempVal == -\/9999 \&\& pm25Val == -\/9999 \&\& pm10Val == -\/9999 \&\& humidityVal == -\/9999))\{}
+\DoxyCodeLine{328                 model.\mbox{\hyperlink{class_hexagon_model_a9f45bf7d9d36ee97f5bdce595dd94404}{addHexagon}}(\mbox{\hyperlink{class_hexagon}{Hexagon}}(newX[0], newX[1], newX[2], newX[3], newX[4], newX[5],      \textcolor{comment}{//x0... -\/> longi}}
+\DoxyCodeLine{329                         newY[0], newY[1], newY[2], newY[3], newY[4], newY[5],      \textcolor{comment}{//y0... -\/> lati}}
+\DoxyCodeLine{330                         model.\mbox{\hyperlink{class_hexagon_model_acfb5c6e5208320529bea2bf44636d4ee}{getPm25TileColor}}(pm25Val), 0.6, tempVal, pm25Val, pm10Val, humidityVal));  \textcolor{comment}{//Farbe des Hexagon, opacity, temp, pm25, pm10}}
+\DoxyCodeLine{331             \}}
+\DoxyCodeLine{332             columncounter = columncounter + 0.4;}
+\DoxyCodeLine{333         \}}
+\DoxyCodeLine{334         \textcolor{keywordflow}{if}(gate == \textcolor{keyword}{false})\{}
+\DoxyCodeLine{335             columncounter = 0.2;}
+\DoxyCodeLine{336             gate = \textcolor{keyword}{true};}
+\DoxyCodeLine{337         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{338             columncounter = 0;}
+\DoxyCodeLine{339             gate = \textcolor{keyword}{false};}
+\DoxyCodeLine{340         \}}
+\DoxyCodeLine{341         rowcounter = rowcounter + 0.2;}
+\DoxyCodeLine{342     \}}
+\DoxyCodeLine{343     ctxt-\/>setContextProperty(\textcolor{stringliteral}{"modelBT9"}, \&model);}
+\DoxyCodeLine{344 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/ilhajr/\+Desktop/fine-\/dust-\/data-\/visualization/src/\+Fine\+Dust\+Map/Hexagon\+Model.\+h\item 
+/\+Users/ilhajr/\+Desktop/fine-\/dust-\/data-\/visualization/src/\+Fine\+Dust\+Map/Hexagon\+Model.\+cpp\end{DoxyCompactItemize}

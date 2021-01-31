@@ -1,0 +1,211 @@
+\hypertarget{class_record}{}\doxysection{Record Class Reference}
+\label{class_record}\index{Record@{Record}}
+
+
+Class to represent the values of a \mbox{\hyperlink{class_sensor}{Sensor}}.  
+
+
+
+
+{\ttfamily \#include $<$Record.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_record_a4f7733c1a2360131e7b781ca42a583aa}{Record}} (string p\+\_\+timestamp, double first, double second)
+\begin{DoxyCompactList}\small\item\em Constructor for a record object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_record_a92fcd446c13314ef9fbba3a51e01a8e6}\label{class_record_a92fcd446c13314ef9fbba3a51e01a8e6}} 
+void \mbox{\hyperlink{class_record_a92fcd446c13314ef9fbba3a51e01a8e6}{show\+Record\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Output the record with its values. \end{DoxyCompactList}\item 
+Q\+Json\+Object \mbox{\hyperlink{class_record_ae2e65db84397c384adf9589ae18ace87}{get\+J\+S\+O\+N\+Record}} ()
+\begin{DoxyCompactList}\small\item\em Method to get a \mbox{\hyperlink{class_record}{Record}} as a J\+S\+ON Object. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_record_a12aa5e158b8c3f2a815e697e32693b64}{get\+First}} () const
+\begin{DoxyCompactList}\small\item\em Method to get the P1 or temperature value of the \mbox{\hyperlink{class_record}{Record}}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_record_ad05cc7ce16471355ad721344beb47266}{get\+Second}} () const
+\begin{DoxyCompactList}\small\item\em Method to get the P2 or humidity value of the \mbox{\hyperlink{class_record}{Record}}. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_record_ab32daf6bb71dab9bc3f368eea31a42ad}{get\+Timestamp}} () const
+\begin{DoxyCompactList}\small\item\em Method to get the timestamp of the record. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_record_a229c401b7afb5499fd0da59bfcbabad7}{set\+Second\+Value}} (double value)
+\begin{DoxyCompactList}\small\item\em Method to set the second value of the record. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to represent the values of a \mbox{\hyperlink{class_sensor}{Sensor}}. 
+
+
+
+Definition at line 18 of file Record.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_record_a4f7733c1a2360131e7b781ca42a583aa}\label{class_record_a4f7733c1a2360131e7b781ca42a583aa}} 
+\index{Record@{Record}!Record@{Record}}
+\index{Record@{Record}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{Record()}{Record()}}
+{\footnotesize\ttfamily Record\+::\+Record (\begin{DoxyParamCaption}\item[{string}]{p\+\_\+timestamp,  }\item[{double}]{first,  }\item[{double}]{second }\end{DoxyParamCaption})}
+
+
+
+Constructor for a record object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+timestamp} & Is the timestamp of the record. \\
+\hline
+{\em first} & P1 if sds sensor, temperature if dht sensor \\
+\hline
+{\em second} & P2 if sds sensor, humidity if dht sensor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 18 of file Record.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18                                                               \{}
+\DoxyCodeLine{19     this-\/>timestamp = p\_timestamp;}
+\DoxyCodeLine{20     this-\/>firstValue = first;}
+\DoxyCodeLine{21     this-\/>secondValue = second;}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_record_a12aa5e158b8c3f2a815e697e32693b64}\label{class_record_a12aa5e158b8c3f2a815e697e32693b64}} 
+\index{Record@{Record}!getFirst@{getFirst}}
+\index{getFirst@{getFirst}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{getFirst()}{getFirst()}}
+{\footnotesize\ttfamily double Record\+::get\+First (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method to get the P1 or temperature value of the \mbox{\hyperlink{class_record}{Record}}. 
+
+\begin{DoxyReturn}{Returns}
+P1 or temperature value 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file Record.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41     \textcolor{keywordflow}{return} firstValue;}
+\DoxyCodeLine{42 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_record_ae2e65db84397c384adf9589ae18ace87}\label{class_record_ae2e65db84397c384adf9589ae18ace87}} 
+\index{Record@{Record}!getJSONRecord@{getJSONRecord}}
+\index{getJSONRecord@{getJSONRecord}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{getJSONRecord()}{getJSONRecord()}}
+{\footnotesize\ttfamily Q\+Json\+Object Record\+::get\+J\+S\+O\+N\+Record (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method to get a \mbox{\hyperlink{class_record}{Record}} as a J\+S\+ON Object. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_record}{Record}} as J\+S\+ON Object 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file Record.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28                                  \{}
+\DoxyCodeLine{29     QJsonObject json\_record;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     QString temp = QString::fromStdString(this-\/>timestamp);}
+\DoxyCodeLine{32     json\_record[\textcolor{stringliteral}{"record\_timestamp"}] = temp;}
+\DoxyCodeLine{33     json\_record[\textcolor{stringliteral}{"record\_p1"}] = this-\/>firstValue;}
+\DoxyCodeLine{34     json\_record[\textcolor{stringliteral}{"record\_p2"}] = this-\/>secondValue;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keywordflow}{return} json\_record;}
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_record_ad05cc7ce16471355ad721344beb47266}\label{class_record_ad05cc7ce16471355ad721344beb47266}} 
+\index{Record@{Record}!getSecond@{getSecond}}
+\index{getSecond@{getSecond}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{getSecond()}{getSecond()}}
+{\footnotesize\ttfamily double Record\+::get\+Second (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method to get the P2 or humidity value of the \mbox{\hyperlink{class_record}{Record}}. 
+
+\begin{DoxyReturn}{Returns}
+P2 or humidity value 
+\end{DoxyReturn}
+
+
+Definition at line 44 of file Record.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46     \textcolor{keywordflow}{return} secondValue;}
+\DoxyCodeLine{47 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_record_ab32daf6bb71dab9bc3f368eea31a42ad}\label{class_record_ab32daf6bb71dab9bc3f368eea31a42ad}} 
+\index{Record@{Record}!getTimestamp@{getTimestamp}}
+\index{getTimestamp@{getTimestamp}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{getTimestamp()}{getTimestamp()}}
+{\footnotesize\ttfamily string Record\+::get\+Timestamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method to get the timestamp of the record. 
+
+\begin{DoxyReturn}{Returns}
+Timestamp as string 
+\end{DoxyReturn}
+
+
+Definition at line 8 of file Record.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keywordflow}{return} timestamp;}
+\DoxyCodeLine{11 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_record_a229c401b7afb5499fd0da59bfcbabad7}\label{class_record_a229c401b7afb5499fd0da59bfcbabad7}} 
+\index{Record@{Record}!setSecondValue@{setSecondValue}}
+\index{setSecondValue@{setSecondValue}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{setSecondValue()}{setSecondValue()}}
+{\footnotesize\ttfamily void Record\+::set\+Second\+Value (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+Method to set the second value of the record. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & P2 or humidity \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 13 of file Record.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     secondValue = value;}
+\DoxyCodeLine{16 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/ilhajr/\+Desktop/fine-\/dust-\/data-\/visualization/src/\+Fine\+Dust\+Map/Record.\+h\item 
+/\+Users/ilhajr/\+Desktop/fine-\/dust-\/data-\/visualization/src/\+Fine\+Dust\+Map/Record.\+cpp\end{DoxyCompactItemize}
