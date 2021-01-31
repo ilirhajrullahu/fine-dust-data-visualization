@@ -1,0 +1,8 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/">
+<file alias="icons/24dp/arrow_back.png">/Users/ilhajr/Desktop/fine-dust-visualization/src/FineDustMap/icons/24dp/arrow_back.png</file>
+<file alias="icons/24dp/burgermenu.png">/Users/ilhajr/Desktop/fine-dust-visualization/src/FineDustMap/icons/24dp/burgermenu.png</file>
+<file alias="icons/24dp/minus.png">/Users/ilhajr/Desktop/fine-dust-visualization/src/FineDustMap/icons/24dp/minus.png</file>
+<file alias="icons/24dp/plus.png">/Users/ilhajr/Desktop/fine-dust-visualization/src/FineDustMap/icons/24dp/plus.png</file>
+</qresource>
+</RCC>
